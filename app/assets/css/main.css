@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/*
+  DESIGN TOKENS — the single source of truth for colors and fonts.
+  Change a value here and it updates everywhere on the site.
+  Use them in classes like: bg-navy, text-charcoal, text-accent, border-line
+*/
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --color-navy: #0F1E3D;        /* primary brand color: headings, dark sections */
+  --color-navy-light: #1C3160;  /* hover states on navy */
+  --color-charcoal: #2B2F36;    /* body text */
+  --color-slate: #5B6372;       /* secondary text */
+  --color-line: #E4E7EC;        /* borders, dividers */
+  --color-mist: #F5F7FA;        /* light section backgrounds */
+  --color-accent: #3B82C4;      /* subtle accent: links, small highlights */
+  --color-accent-soft: #E8F1FA; /* accent tint backgrounds */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-sans text-charcoal antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply text-navy tracking-tight;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+}
+
+/* Reusable building blocks. Use them like normal Tailwind classes: class="btn-primary" */
+@utility container-page {
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+}
+@utility section {
+  @apply py-20 sm:py-28;
+}
+@utility eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.18em] text-accent;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200;
+}
+@utility btn-primary {
+  @apply btn bg-navy text-white hover:bg-navy-light;
+}
+@utility btn-secondary {
+  @apply btn border border-line bg-white text-navy hover:border-navy;
+}
+@utility btn-light {
+  @apply btn bg-white text-navy hover:bg-mist;
+}
+@utility field {
+  @apply w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-charcoal placeholder:text-slate/70 focus:border-accent focus:outline-none;
+}
+
+/* Subtle fade-up when sections scroll into view (see plugins/reveal.ts) */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
