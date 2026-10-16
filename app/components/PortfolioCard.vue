@@ -45,9 +45,6 @@ const playing = ref(false)
       <p class="eyebrow">{{ service.shortName }}</p>
       <h3 class="mt-2 text-lg font-bold">{{ item.title }}</h3>
       <p class="mt-2 text-sm leading-relaxed text-slate">{{ item.description }}</p>
-      <p v-if="item.problem" class="mt-4 rounded-xl bg-mist p-3 text-sm text-charcoal">
-        <span class="font-semibold text-navy">The challenge:</span> {{ item.problem }}
-      </p>
       <p v-if="item.result" class="mt-3 text-sm font-semibold text-navy">Result: {{ item.result }}</p>
     </div>
   </article>

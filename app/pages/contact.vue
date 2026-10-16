@@ -66,14 +66,13 @@ async function submit() {
     <div class="container-page grid gap-14 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
       <!-- Left: intro + details -->
       <div>
-        <p class="eyebrow">Contact us</p>
-        <h1 class="mt-4 text-4xl font-extrabold leading-tight sm:text-5xl">Let's Take Some Work Off Your Plate.</h1>
-        <p class="mt-5 text-lg text-slate">Tell us what you need, and we'll help you find the right support for your business.</p>
+        <h1 class="text-[2.625rem] leading-[1.05] sm:text-6xl">Let's Take Some Work Off Your Plate.</h1>
+        <p class="mt-6 text-lg leading-relaxed text-slate">Tell us what you need, and we'll help you find the right support for your business.</p>
 
-        <dl class="mt-10 space-y-6 border-t border-line pt-8 text-sm">
+        <dl class="mt-12 space-y-6 border-t border-line pt-8">
           <div>
             <dt class="font-semibold text-navy">Email</dt>
-            <dd class="mt-1"><a :href="`mailto:${site.email}`" class="text-accent hover:underline">{{ site.email }}</a></dd>
+            <dd class="mt-1"><a :href="`mailto:${site.email}`" class="link-underline break-all text-accent">{{ site.email }}</a></dd>
           </div>
           <div>
             <dt class="font-semibold text-navy">Location</dt>
@@ -81,20 +80,20 @@ async function submit() {
           </div>
           <div>
             <dt class="font-semibold text-navy">Follow us</dt>
-            <dd class="mt-1 flex gap-4">
-              <a v-for="s in site.socials" :key="s.label" :href="s.href" target="_blank" rel="noopener" class="text-slate hover:text-navy">{{ s.label }}</a>
+            <dd class="mt-1 flex flex-wrap gap-x-5">
+              <a v-for="s in site.socials" :key="s.label" :href="s.href" target="_blank" rel="noopener" class="link-underline py-1 text-slate hover:text-navy">{{ s.label }}</a>
             </dd>
           </div>
         </dl>
       </div>
 
       <!-- Right: form -->
-      <div class="rounded-3xl border border-line bg-white p-6 sm:p-10">
+      <div class="-mx-5 bg-mist px-5 py-8 sm:mx-0 sm:rounded-xl sm:p-10">
         <div v-if="status === 'sent'" class="py-12 text-center" role="status">
-          <span class="mx-auto grid size-14 place-items-center rounded-full bg-accent-soft text-navy">
-            <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+          <span class="mx-auto grid size-14 place-items-center rounded-full bg-navy text-white">
+            <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
           </span>
-          <h2 class="mt-6 text-2xl font-bold">Thank you, {{ form.name.split(' ')[0] }}!</h2>
+          <h2 class="mt-6 text-3xl">Thank you, {{ form.name.split(' ')[0] }}!</h2>
           <p class="mt-2 text-slate">We've received your message and will get back to you soon.</p>
         </div>
 

@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: 'https://www.example.com', // TODO: client's real domain
-      siteName: 'Agency Name', // TODO: client's business name
+      siteName: 'Enrich',
       web3formsKey: '', // set NUXT_PUBLIC_WEB3FORMS_KEY in .env
       gaId: '', // set NUXT_PUBLIC_GA_ID in .env (Google Analytics 4, e.g. G-XXXXXXX)
     },
@@ -35,7 +35,7 @@ export default defineNuxtConfig({
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400..500&display=swap',
         },
       ],
     },

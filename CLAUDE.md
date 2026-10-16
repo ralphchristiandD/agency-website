@@ -59,16 +59,28 @@ Always use these tokens. Never hard-code hex colors in components.
 | `slate` | #5B6372 | Secondary text |
 | `line` | #E4E7EC | Borders, dividers |
 | `mist` | #F5F7FA | Light section backgrounds |
+| `accent-mid` | #255080 | Hero headline 2nd line (between navy and accent) |
 | `accent` | #3B82C4 | Small highlights, links, eyebrow labels (use sparingly) |
 | `accent-soft` | #E8F1FA | Icon backgrounds, tinted boxes |
 
-- **Font:** Manrope (loaded from Google Fonts in `nuxt.config.ts`).
-- **Headlines:** large and bold (`font-extrabold` for page H1s, `font-bold` for H2/H3), tight tracking.
+- **Fonts:** Newsreader (`font-serif`) for H1/H2 headlines, Hanken Grotesk (`font-sans`) for body,
+  buttons, labels, and H3/H4. Both load from Google Fonts in `nuxt.config.ts`.
+- **Headlines:** H1/H2 are serif at regular weight; size does the work (never bold the serif).
+  The hero headline shades line by line: navy → `accent-mid` → `accent` (developer's choice).
+- **Labels:** sections keep their small uppercase `eyebrow` label above the H2 (developer's choice):
+  "Business support, done right", "Who we are", "Our services", "Why choose us", "How it works".
+- **Developer-approved section designs (keep them):** Who We Are uses check-mark icons (not ruled lines);
+  Services are three cards with a tinted icon square; Why Choose Us is the navy 01–04 grid;
+  How It Works uses numbered circles joined by a line. Don't overuse horizontal rules.
+- **Body text:** intro paragraphs are `text-lg leading-relaxed text-slate` everywhere, for consistency.
 - **Spacing:** generous whitespace. Sections use the `section` utility (py-20 / sm:py-28).
 - **Width:** content sits inside `container-page` (max-w-6xl with side padding).
-- **Corners:** cards `rounded-3xl`, inputs `rounded-xl`, buttons `rounded-full`.
-- **Buttons:** use `btn-primary`, `btn-secondary`, or `btn-light`. Don't invent new button styles.
-- **Animation:** only the gentle `v-reveal` fade-up (add `v-reveal class="reveal"`). Respect reduced motion.
+- **Corners:** buttons and inputs `rounded-lg`, panels/images `rounded-xl`, home service/feature cards `rounded-3xl`.
+- **Buttons:** use `btn-primary`, `btn-secondary`, or `btn-light`. Don't invent new button styles
+  or add arrows to button text. Text links use `link-underline`.
+- **Animation:** the hero `rise` entrance on load, `v-reveal` on at most one or two key blocks,
+  and hover/menu transitions. Everything is switched off under reduced motion.
+- **Tap targets:** at least 44px tall on mobile (buttons already are).
 - **Mobile first:** every section must look right at 390px wide and at 1440px wide.
 - **Accessibility:** real labels on form fields, alt text on meaningful images, visible focus states,
   good color contrast.
@@ -99,11 +111,15 @@ docs/client-brief.md   The original client brief
 
 ## Before launch checklist
 
-- [ ] Replace placeholders in `app/data/site.ts` (name, email, location, socials) and the logo in `SiteHeader.vue`
+- [x] Business name (Enrich), email, and location set in `app/data/site.ts`
+- [ ] Real social links in `app/data/site.ts`, logo in `SiteHeader.vue`
+- [ ] Home photos (`public/images/`) are free Pexels stock picks; swap in real team/workspace photos if the client has them
+- [ ] Portfolio page restyled to the new design (next round)
 - [ ] Replace placeholder projects in `app/data/portfolio.ts` with real, approved samples
 - [ ] Set `NUXT_PUBLIC_WEB3FORMS_KEY`, `NUXT_PUBLIC_GA_ID`, `NUXT_PUBLIC_SITE_URL`, `NUXT_PUBLIC_SITE_NAME`
       in Netlify's environment variables
-- [ ] Replace the privacy policy placeholder with the client-approved version
+- [ ] Client reviews and approves the drafted privacy policy (`app/pages/privacy.vue`): confirm team access,
+      how long inquiries are kept, and the Google Analytics retention setting; ideally a lawyer checks it
 - [ ] Add a social share image (`public/og-image.png`, 1200x630) and wire it into `useSeoMeta`
 - [ ] Test the contact form end to end (submission arrives in the client's inbox)
 - [ ] Lighthouse score 90+ on all pages, mobile and desktop

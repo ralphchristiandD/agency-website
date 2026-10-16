@@ -5,39 +5,40 @@ const year = new Date().getFullYear()
 
 <template>
   <footer class="bg-navy text-white/70">
-    <div class="container-page grid gap-10 py-14 md:grid-cols-[1.5fr_1fr_1fr]">
+    <!-- Sizes and spacing match the original footer; links get extra tap room on phones only -->
+    <div class="container-page grid gap-8 border-t border-white/10 py-10 md:grid-cols-[1.5fr_1fr_1fr]">
       <div>
-        <p class="text-lg font-bold text-white">{{ site.name }}</p>
+        <p class="font-serif text-xl leading-none text-white">{{ site.name }}</p>
         <p class="mt-3 max-w-sm text-sm leading-relaxed">{{ site.tagline }}</p>
       </div>
 
       <div>
         <p class="text-sm font-semibold text-white">Pages</p>
         <ul class="mt-3 space-y-2 text-sm">
-          <li><NuxtLink to="/" class="hover:text-white">Home</NuxtLink></li>
-          <li><NuxtLink to="/portfolio" class="hover:text-white">Portfolio</NuxtLink></li>
-          <li><NuxtLink to="/contact" class="hover:text-white">Contact Us</NuxtLink></li>
+          <li><NuxtLink to="/" class="link-underline inline-block py-1 hover:text-white sm:py-0">Home</NuxtLink></li>
+          <li><NuxtLink to="/portfolio" class="link-underline inline-block py-1 hover:text-white sm:py-0">Portfolio</NuxtLink></li>
+          <li><NuxtLink to="/contact" class="link-underline inline-block py-1 hover:text-white sm:py-0">Contact Us</NuxtLink></li>
         </ul>
       </div>
 
       <div>
         <p class="text-sm font-semibold text-white">Get in touch</p>
         <ul class="mt-3 space-y-2 text-sm">
-          <li><a :href="`mailto:${site.email}`" class="hover:text-white">{{ site.email }}</a></li>
+          <li><a :href="`mailto:${site.email}`" class="link-underline inline-block break-all py-1 hover:text-white sm:py-0">{{ site.email }}</a></li>
           <li>{{ site.location }}</li>
         </ul>
-        <ul class="mt-4 flex gap-4 text-sm">
+        <ul class="mt-4 flex flex-wrap gap-x-4 text-sm">
           <li v-for="s in site.socials" :key="s.label">
-            <a :href="s.href" target="_blank" rel="noopener" class="hover:text-white">{{ s.label }}</a>
+            <a :href="s.href" target="_blank" rel="noopener" class="link-underline inline-block py-1 hover:text-white sm:py-0">{{ s.label }}</a>
           </li>
         </ul>
       </div>
     </div>
 
     <div class="border-t border-white/10">
-      <div class="container-page flex flex-col gap-2 py-6 text-xs sm:flex-row sm:items-center sm:justify-between">
+      <div class="container-page flex flex-col gap-2 py-5 text-xs sm:flex-row sm:items-center sm:justify-between">
         <p>&copy; {{ year }} {{ site.name }}. All rights reserved.</p>
-        <NuxtLink to="/privacy" class="hover:text-white">Privacy Policy</NuxtLink>
+        <NuxtLink to="/privacy" class="link-underline self-start py-1 hover:text-white sm:self-auto sm:py-0">Privacy Policy</NuxtLink>
       </div>
     </div>
   </footer>

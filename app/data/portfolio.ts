@@ -18,7 +18,6 @@ export interface PortfolioItem {
   title: string
   category: ServiceKey
   description: string
-  problem?: string
   image?: string
   videoId?: string
   vertical?: boolean
@@ -30,19 +29,16 @@ export const portfolio: PortfolioItem[] = [
     title: 'Sales Performance Dashboard',
     category: 'analytics',
     description: 'Interactive Excel dashboard tracking monthly revenue, top products, and regional performance.',
-    problem: 'Sales data lived in separate monthly spreadsheets, making trends hard to see.',
   },
   {
     title: 'Before & After: Customer Data Cleanup',
     category: 'analytics',
     description: 'Duplicate removal, consistent formatting, and validation rules for a customer list.',
-    problem: 'Inconsistent entries were causing errors in mailing and reporting.',
   },
   {
     title: 'Inventory Management Tracker',
     category: 'admin',
     description: 'Google Sheets tracker with stock levels, reorder alerts, and supplier contacts.',
-    problem: 'Stock was tracked by hand, leading to missed reorders.',
   },
   {
     title: 'Client Onboarding Workflow',
