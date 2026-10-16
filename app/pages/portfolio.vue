@@ -23,8 +23,7 @@ const shown = computed(() =>
   <div>
     <section class="pb-12 pt-16 sm:pt-24">
       <div class="container-page">
-        <p class="eyebrow">Portfolio</p>
-        <h1 class="mt-4 max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl">Work That Speaks for Itself.</h1>
+        <h1 class="max-w-3xl text-[2.625rem] leading-[1.05] sm:text-6xl">Work That Speaks for Itself.</h1>
         <p class="mt-5 max-w-2xl text-lg text-slate">
           A selection of administrative, analytics, and creative projects, and the business problems they solved.
         </p>

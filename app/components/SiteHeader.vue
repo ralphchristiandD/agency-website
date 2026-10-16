@@ -16,61 +16,76 @@ watch(() => route.path, () => (open.value = false))
 
 onMounted(() => {
   const onScroll = () => (scrolled.value = window.scrollY > 8)
+  const onKey = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') open.value = false
+  }
   onScroll()
   window.addEventListener('scroll', onScroll, { passive: true })
-  onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
+  window.addEventListener('keydown', onKey)
+  onBeforeUnmount(() => {
+    window.removeEventListener('scroll', onScroll)
+    window.removeEventListener('keydown', onKey)
+  })
 })
 </script>
 
 <template>
   <header
-    class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur transition-colors"
-    :class="scrolled ? 'border-line' : 'border-transparent'"
+    class="sticky top-0 z-40 border-b transition-colors duration-200"
+    :class="scrolled || open ? 'border-line bg-white/95 backdrop-blur' : 'border-transparent bg-white'"
   >
     <nav class="container-page flex h-18 items-center justify-between" aria-label="Main">
-      <!-- TODO: replace with the client's logo, e.g. <img src="/logo.svg" alt="Agency Name" class="h-8"> -->
-      <NuxtLink to="/" class="flex items-center gap-2.5 text-navy" aria-label="Home">
-        <span class="grid size-8 place-items-center rounded-lg bg-navy text-sm font-extrabold text-white">A</span>
-        <span class="text-base font-bold tracking-tight">{{ site.name }}</span>
+      <!-- TODO: replace with the client's logo, e.g. <img src="/logo.svg" alt="Enrich" class="h-8"> -->
+      <NuxtLink to="/" class="font-serif text-[1.75rem] leading-none text-navy" aria-label="Enrich, home">
+        {{ site.name }}
       </NuxtLink>
 
-      <div class="hidden items-center gap-8 md:flex">
+      <div class="hidden items-center gap-9 md:flex">
         <NuxtLink
           v-for="link in links"
           :key="link.to"
           :to="link.to"
-          class="text-sm font-medium text-slate transition-colors hover:text-navy"
-          active-class="!text-navy"
+          class="link-underline py-1 text-[0.9375rem] font-medium text-slate transition-colors hover:text-navy"
+          exact-active-class="!text-navy !bg-[length:100%_1px]"
         >
           {{ link.label }}
         </NuxtLink>
-        <NuxtLink to="/contact" class="btn-primary !px-5 !py-2.5">Get Started</NuxtLink>
+        <NuxtLink to="/contact" class="btn-primary !min-h-10 !px-5 !py-2">Get Started</NuxtLink>
       </div>
 
       <button
-        class="grid size-10 place-items-center rounded-lg text-navy md:hidden"
+        class="-mr-2 grid size-11 place-items-center rounded-lg text-navy md:hidden"
         :aria-expanded="open"
         aria-controls="mobile-menu"
-        aria-label="Toggle menu"
+        :aria-label="open ? 'Close menu' : 'Open menu'"
         @click="open = !open"
       >
-        <svg v-if="!open" class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" /></svg>
-        <svg v-else class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18" /></svg>
+        <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <path v-if="open" d="M6 6l12 12M18 6L6 18" />
+          <path v-else d="M4 8h16M4 16h16" />
+        </svg>
       </button>
     </nav>
 
-    <div v-show="open" id="mobile-menu" class="border-t border-line bg-white md:hidden">
-      <div class="container-page flex flex-col gap-1 py-4">
-        <NuxtLink
-          v-for="link in links"
-          :key="link.to"
-          :to="link.to"
-          class="rounded-lg px-3 py-3 text-base font-medium text-charcoal hover:bg-mist"
-        >
-          {{ link.label }}
-        </NuxtLink>
-        <NuxtLink to="/contact" class="btn-primary mt-2">Get Started</NuxtLink>
+    <Transition
+      enter-active-class="transition duration-200 ease-out motion-reduce:transition-none"
+      enter-from-class="opacity-0 -translate-y-2"
+      leave-active-class="transition duration-150 ease-in motion-reduce:transition-none"
+      leave-to-class="opacity-0 -translate-y-2"
+    >
+      <div v-show="open" id="mobile-menu" class="border-t border-line bg-white md:hidden">
+        <div class="container-page flex flex-col py-3">
+          <NuxtLink
+            v-for="link in links"
+            :key="link.to"
+            :to="link.to"
+            class="flex min-h-13 items-center border-b border-line font-serif text-2xl text-navy"
+          >
+            {{ link.label }}
+          </NuxtLink>
+          <NuxtLink to="/contact" class="btn-primary mb-3 mt-6">Get Started</NuxtLink>
+        </div>
       </div>
-    </div>
+    </Transition>
   </header>
 </template>

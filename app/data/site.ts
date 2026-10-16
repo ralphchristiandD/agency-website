@@ -1,7 +1,7 @@
 // Business details shown across the site (header, footer, contact page).
-// TODO: replace every placeholder with the client's real information.
+// TODO: replace the social links with the client's real profiles.
 export const site = {
-  name: 'Business Support Agency',
+  name: 'Enrich',
   tagline: 'We handle your operations. We make sense of your data. We elevate your content.',
   email: 'enrich.tog@gmail.com',
   location: 'California, USA',
