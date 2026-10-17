@@ -72,7 +72,7 @@ async function submit() {
         <dl class="mt-12 space-y-6 border-t border-line pt-8">
           <div>
             <dt class="font-semibold text-navy">Email</dt>
-            <dd class="mt-1"><a :href="`mailto:${site.email}`" class="link-underline break-all text-accent">{{ site.email }}</a></dd>
+            <dd class="mt-1"><a :href="`mailto:${site.email}`" class="link-underline break-all text-accent-mid">{{ site.email }}</a></dd>
           </div>
           <div>
             <dt class="font-semibold text-navy">Location</dt>

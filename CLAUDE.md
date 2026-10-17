@@ -59,8 +59,8 @@ Always use these tokens. Never hard-code hex colors in components.
 | `slate` | #5B6372 | Secondary text |
 | `line` | #E4E7EC | Borders, dividers |
 | `mist` | #F5F7FA | Light section backgrounds |
-| `accent-mid` | #255080 | Hero headline 2nd line (between navy and accent) |
-| `accent` | #3B82C4 | Small highlights, links, eyebrow labels (use sparingly) |
+| `accent-mid` | #255080 | Hero headline 2nd line; all small blue text (eyebrow labels, text links) |
+| `accent` | #3B82C4 | Large text, icons, bars, dots only. Fails contrast as small text on white (4.06:1) |
 | `accent-soft` | #E8F1FA | Icon backgrounds, tinted boxes |
 
 - **Fonts:** Newsreader (`font-serif`) for H1/H2 headlines, Hanken Grotesk (`font-sans`) for body,

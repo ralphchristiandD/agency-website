@@ -9,7 +9,6 @@ const year = new Date().getFullYear()
     <div class="container-page grid gap-8 border-t border-white/10 py-10 md:grid-cols-[1.5fr_1fr_1fr]">
       <div>
         <p class="font-serif text-xl leading-none text-white">{{ site.name }}</p>
-        <p class="mt-3 max-w-sm text-sm leading-relaxed">{{ site.tagline }}</p>
       </div>
 
       <div>

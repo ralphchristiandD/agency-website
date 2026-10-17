@@ -114,7 +114,7 @@ function closeMobileMenu() {
         </aside>
 
       <div
-        class="max-w-2xl space-y-14 leading-relaxed text-charcoal [&_a]:text-accent [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-navy [&_h2]:text-3xl [&_h2]:sm:text-4xl [&_li]:pl-1 [&_strong]:font-semibold [&_strong]:text-navy [&_ul]:list-disc [&_ul]:space-y-3 [&_ul]:pl-5 [&_ul]:marker:text-accent"
+        class="max-w-2xl space-y-14 leading-relaxed text-charcoal [&_a]:text-accent-mid [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-navy [&_h2]:text-3xl [&_h2]:sm:text-4xl [&_li]:pl-1 [&_strong]:font-semibold [&_strong]:text-navy [&_ul]:list-disc [&_ul]:space-y-3 [&_ul]:pl-5 [&_ul]:marker:text-accent"
       >
         <section id="who-we-are" class="space-y-4">
           <h2>Who we are</h2>

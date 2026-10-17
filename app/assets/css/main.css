@@ -53,7 +53,8 @@
 }
 /* Small label above a section heading, e.g. "WHO WE ARE" */
 @utility eyebrow {
-  @apply text-xs font-semibold uppercase tracking-[0.18em] text-accent;
+  /* accent-mid, not accent: small text needs the darker blue to pass contrast (8:1 vs 3.9:1 on white) */
+  @apply text-xs font-semibold uppercase tracking-[0.18em] text-accent-mid;
 }
 @utility btn {
   @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-6 py-3 text-[0.9375rem] font-semibold transition-[background-color,border-color,color,transform] duration-200 active:translate-y-px;
