@@ -78,8 +78,9 @@ Always use these tokens. Never hard-code hex colors in components.
 - **Corners:** buttons and inputs `rounded-lg`, panels/images `rounded-xl`, home service/feature cards `rounded-3xl`.
 - **Buttons:** use `btn-primary`, `btn-secondary`, or `btn-light`. Don't invent new button styles
   or add arrows to button text. Text links use `link-underline`.
-- **Animation:** the hero `rise` entrance on load, `v-reveal` on at most one or two key blocks,
-  and hover/menu transitions. Everything is switched off under reduced motion.
+- **Animation:** the hero `rise` entrance on load; on the Home page only, a gentle `v-reveal` fade-up
+  on each section (cards and steps staggered ~120ms apart; developer's choice); hover/menu transitions.
+  Other pages don't use `v-reveal`. Everything is switched off under reduced motion.
 - **Tap targets:** at least 44px tall on mobile (buttons already are).
 - **Mobile first:** every section must look right at 390px wide and at 1440px wide.
 - **Accessibility:** real labels on form fields, alt text on meaningful images, visible focus states,

@@ -79,7 +79,8 @@ const steps = [
           width="2400"
           height="1600"
           decoding="async"
-          class="aspect-[4/3] w-full rounded-3xl object-cover saturate-[0.9] sm:aspect-[21/9]"
+          v-reveal
+          class="reveal aspect-[4/3] w-full rounded-3xl object-cover saturate-[0.9] sm:aspect-[21/9]"
         >
       </div>
     </section>
@@ -89,10 +90,10 @@ const steps = [
          and the checklist starts on the row below, level with the end of the heading. -->
     <section class="section bg-mist">
       <div class="container-page">
-        <p class="eyebrow">Who we are</p>
-        <div class="mt-4 grid gap-y-8 lg:grid-cols-2 lg:gap-x-20 lg:gap-y-0">
+        <p v-reveal class="eyebrow reveal">Who we are</p>
+        <div v-reveal class="reveal mt-4 grid gap-y-8 lg:grid-cols-2 lg:gap-x-20 lg:gap-y-0" style="transition-delay: 100ms">
           <h2 class="text-4xl leading-[1.1] sm:text-5xl">Your Business Support Team, Without the Overhead.</h2>
-          <p class="text-lg leading-relaxed text-slate lg:self-center">
+          <p class="text-lg leading-relaxed text-slate lg:-mt-[6px]">
             We're a U.S.-led team providing dependable administrative, analytical, and creative support to growing businesses. Our mission is simple: take work off your plate, help you make better decisions, and deliver quality work you can count on.
           </p>
           <ul class="grid gap-4 sm:grid-cols-2 lg:col-start-2">
@@ -112,17 +113,19 @@ const steps = [
          lists, and buttons line up across all three cards. -->
     <section id="services" class="section">
       <div class="container-page">
-        <div class="max-w-2xl">
+        <div v-reveal class="reveal max-w-2xl">
           <p class="eyebrow">Our services</p>
           <h2 class="mt-4 text-4xl leading-[1.1] sm:text-5xl">Three ways we take work off your plate.</h2>
         </div>
 
         <div class="mt-14 grid gap-6 lg:grid-cols-3">
           <article
-            v-for="s in services"
+            v-for="(s, i) in services"
             :id="`service-${s.key}`"
             :key="s.key"
-            class="flex flex-col overflow-hidden rounded-3xl border border-line bg-white p-8 transition-shadow hover:shadow-[0_24px_60px_-30px_rgba(15,30,61,0.35)] lg:row-span-6 lg:grid lg:grid-rows-subgrid lg:gap-0"
+            v-reveal
+            :style="{ transitionDelay: `${i * 120}ms, ${i * 120}ms, 0ms` }"
+            class="reveal flex flex-col overflow-hidden rounded-3xl border border-line bg-white p-8 transition-shadow hover:shadow-[0_24px_60px_-30px_rgba(15,30,61,0.35)] lg:row-span-6 lg:grid lg:grid-rows-subgrid lg:gap-0"
           >
             <!-- Photo runs edge to edge across the top of the card (cancels the card's padding) -->
             <img
@@ -162,11 +165,11 @@ const steps = [
     <!-- WHY CHOOSE US (boxes share rows on tablet/desktop so descriptions line up) -->
     <section class="section bg-navy text-white">
       <div class="container-page">
-        <div class="max-w-2xl">
+        <div v-reveal class="reveal max-w-2xl">
           <p class="eyebrow !text-white/60">Why choose us</p>
           <h2 class="mt-4 text-4xl leading-[1.1] !text-white sm:text-5xl">Global Talent. U.S.-Led Support.</h2>
         </div>
-        <div class="mt-14 grid gap-px overflow-hidden rounded-3xl bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+        <div v-reveal class="reveal mt-14 grid gap-px overflow-hidden rounded-3xl bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
           <div v-for="(r, i) in reasons" :key="r.title" class="bg-navy p-8 sm:row-span-3 sm:grid sm:grid-rows-subgrid sm:gap-0">
             <span class="text-sm font-semibold text-accent">0{{ i + 1 }}</span>
             <!-- Title size scales with the box width (max 18px) so every title fits on one line -->
@@ -182,12 +185,12 @@ const steps = [
     <!-- HOW IT WORKS -->
     <section class="section">
       <div class="container-page">
-        <div class="max-w-2xl">
+        <div v-reveal class="reveal max-w-2xl">
           <p class="eyebrow">How it works</p>
           <h2 class="mt-4 text-4xl leading-[1.1] sm:text-5xl">Getting started is simple.</h2>
         </div>
         <ol class="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
-          <li v-for="(step, i) in steps" :key="step.title" class="relative">
+          <li v-for="(step, i) in steps" :key="step.title" v-reveal class="reveal relative" :style="{ transitionDelay: `${i * 120}ms` }">
             <div class="flex items-center gap-4">
               <span class="grid size-11 shrink-0 place-items-center rounded-full border border-navy text-sm font-bold text-navy">{{ i + 1 }}</span>
               <span v-if="i < steps.length - 1" class="hidden h-px flex-1 bg-line md:block" />
