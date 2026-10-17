@@ -41,15 +41,17 @@ const steps = [
     <section class="pb-12 pt-10 sm:pb-16 sm:pt-16">
       <div class="container-page">
         <p class="eyebrow rise">Business support, done right</p>
-        <h1 class="mt-5 text-[2.625rem] leading-[1.05] sm:text-7xl lg:text-[5.75rem]">
+        <h1 class="mt-5 text-[2.375rem] leading-[1.05] sm:text-7xl lg:text-[5.75rem]">
           <span
             v-for="(line, i) in heroLines"
             :key="line.text"
-            class="rise flex items-center justify-between gap-8 border-b border-line py-2 sm:py-3"
+            class="rise flex items-center justify-between gap-2.5 border-b border-line py-2 sm:gap-8 sm:py-3"
             :style="{ animationDelay: `${i * 90}ms` }"
           >
             <span :class="line.color">{{ line.text }}</span>
-            <span class="hidden md:block"><HeroVisual :kind="line.visual" /></span>
+            <!-- Full illustration on desktop, compact one on phones and tablets -->
+            <span class="hidden lg:block"><HeroVisual :kind="line.visual" /></span>
+            <span class="shrink-0 lg:hidden"><HeroVisual :kind="line.visual" compact /></span>
           </span>
         </h1>
 
@@ -61,11 +63,6 @@ const steps = [
             <NuxtLink to="/contact" class="btn-primary">Let's Work Together</NuxtLink>
             <NuxtLink to="/portfolio" class="btn-secondary">Explore Our Work</NuxtLink>
           </div>
-        </div>
-
-        <!-- On phones the three illustrations sit together under the intro -->
-        <div class="mt-10 grid grid-cols-3 gap-2 md:hidden">
-          <HeroVisual v-for="line in heroLines" :key="line.visual" :kind="line.visual" class="!w-full !px-2.5" />
         </div>
       </div>
     </section>
