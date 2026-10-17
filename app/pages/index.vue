@@ -14,11 +14,12 @@ const heroLines = [
   { text: 'Greater Impact.', visual: 'video', color: 'text-accent' },
 ] as const
 
+// Listed in desktop order (two columns). `mobile` sets the order on phones (one column).
 const highlights = [
-  'Skilled remote professionals',
-  'Personalized service',
-  'Flexible project-based and ongoing support',
-  'U.S.-based client communication',
+  { text: 'Skilled remote professionals', mobile: 'order-2' },
+  { text: 'Personalized service', mobile: 'order-1' },
+  { text: 'Flexible project-based and ongoing support', mobile: 'order-4' },
+  { text: 'U.S.-based client communication', mobile: 'order-3' },
 ]
 
 const reasons = [
@@ -41,7 +42,7 @@ const steps = [
     <section class="pb-12 pt-10 sm:pb-16 sm:pt-16">
       <div class="container-page">
         <p class="eyebrow rise">Business support, done right</p>
-        <h1 class="mt-5 text-[2.375rem] leading-[1.05] sm:text-7xl lg:text-[5.75rem]">
+        <h1 class="@container mt-5 text-[2.375rem] leading-[1.05] sm:text-6xl md:text-7xl lg:text-[5.75rem]">
           <span
             v-for="(line, i) in heroLines"
             :key="line.text"
@@ -96,11 +97,11 @@ const steps = [
             We're a U.S.-led team providing dependable administrative, analytical, and creative support to growing businesses. Our mission is simple: take work off your plate, help you make better decisions, and deliver quality work you can count on.
           </p>
           <ul class="grid gap-4 sm:grid-cols-2 lg:col-start-2">
-            <li v-for="h in highlights" :key="h" class="flex items-start gap-3 font-medium text-navy">
+            <li v-for="h in highlights" :key="h.text" class="flex items-start gap-3 font-medium text-navy sm:order-none" :class="h.mobile">
               <span class="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-navy text-white">
                 <svg class="size-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5 4.5-5" /></svg>
               </span>
-              {{ h }}
+              {{ h.text }}
             </li>
           </ul>
         </div>
