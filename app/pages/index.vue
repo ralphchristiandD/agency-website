@@ -14,12 +14,11 @@ const heroLines = [
   { text: 'Greater Impact.', visual: 'video', color: 'text-accent' },
 ] as const
 
-// Listed in desktop order (two columns). `mobile` sets the order on phones (one column).
 const highlights = [
-  { text: 'Skilled remote professionals', mobile: 'order-2' },
-  { text: 'Personalized service', mobile: 'order-1' },
-  { text: 'Flexible project-based and ongoing support', mobile: 'order-4' },
-  { text: 'U.S.-based client communication', mobile: 'order-3' },
+  'Personalized service',
+  'Skilled remote professionals',
+  'U.S.-based client communication',
+  'Flexible project-based and ongoing support',
 ]
 
 const reasons = [
@@ -97,11 +96,11 @@ const steps = [
             We're a U.S.-led team providing dependable administrative, analytical, and creative support to growing businesses. Our mission is simple: take work off your plate, help you make better decisions, and deliver quality work you can count on.
           </p>
           <ul class="grid gap-4 sm:grid-cols-2 lg:col-start-2">
-            <li v-for="h in highlights" :key="h.text" class="flex items-start gap-3 font-medium text-navy sm:order-none" :class="h.mobile">
+            <li v-for="h in highlights" :key="h" class="flex items-start gap-3 font-medium text-navy">
               <span class="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-navy text-white">
                 <svg class="size-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5 4.5-5" /></svg>
               </span>
-              {{ h.text }}
+              {{ h }}
             </li>
           </ul>
         </div>
