@@ -93,7 +93,7 @@ const steps = [
         <p v-reveal class="eyebrow reveal">Who we are</p>
         <div v-reveal class="reveal mt-4 grid gap-y-8 lg:grid-cols-2 lg:gap-x-20 lg:gap-y-0" style="transition-delay: 100ms">
           <h2 class="text-4xl leading-[1.1] sm:text-5xl">Your Business Support Team, Without the Overhead.</h2>
-          <p class="text-lg leading-relaxed text-slate lg:-mt-[6px]">
+          <p class="text-lg leading-relaxed text-slate sm:text-justify lg:-mt-[6px]">
             We're a U.S.-led team providing dependable administrative, analytical, and creative support to growing businesses. Our mission is simple: take work off your plate, help you make better decisions, and deliver quality work you can count on.
           </p>
           <ul class="grid gap-4 sm:grid-cols-2 lg:col-start-2">
