@@ -29,14 +29,19 @@ const form = reactive({
 
 const status = ref<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
+// Preview mode: no form service connected yet (no Web3Forms key). The form pretends to send
+// so it can be tested and demoed. It switches to real sending as soon as a key is added.
+const demoMode = !config.public.web3formsKey
+
 async function submit() {
   if (form.botcheck) return
-  if (!config.public.web3formsKey) {
-    status.value = 'error'
-    console.warn('Missing NUXT_PUBLIC_WEB3FORMS_KEY. See README.md → Contact form.')
+  status.value = 'sending'
+  if (demoMode) {
+    console.info('[Preview mode] This is what the form would send:', { ...form, botcheck: undefined })
+    await new Promise(resolve => setTimeout(resolve, 900))
+    status.value = 'sent'
     return
   }
-  status.value = 'sending'
   try {
     const res = await $fetch<{ success: boolean }>('https://api.web3forms.com/submit', {
       method: 'POST',
@@ -95,6 +100,9 @@ async function submit() {
           </span>
           <h2 class="mt-6 text-3xl">Thank you, {{ form.name.split(' ')[0] }}!</h2>
           <p class="mt-2 text-slate">We've received your message and will get back to you soon.</p>
+          <p v-if="demoMode" class="mt-6 inline-block rounded-lg bg-accent-soft px-3 py-2 text-xs text-navy">
+            Preview mode: this message wasn't actually sent.
+          </p>
         </div>
 
         <form v-else class="grid gap-5 sm:grid-cols-2" @submit.prevent="submit">
