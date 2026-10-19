@@ -44,7 +44,8 @@ export default defineNuxtConfig({
   // Build every page as static HTML (fast, cheap hosting, good for SEO)
   nitro: {
     prerender: {
-      routes: ['/', '/portfolio', '/contact', '/privacy'],
+      // '/portfolio' is hidden for now (saved in backups/portfolio-page)
+      routes: ['/', '/contact', '/privacy'],
     },
   },
 })

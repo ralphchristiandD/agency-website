@@ -181,7 +181,7 @@ function closeMobileMenu() {
             <li>
               <strong>Service providers</strong> who run parts of this website for us: Web3Forms (delivers contact form
               messages to our inbox), Google (our email, Google Analytics, and the fonts this site loads), and Netlify
-              (website hosting). YouTube receives information only when you choose to play a portfolio video.
+              (website hosting).
             </li>
             <li><strong>Government authorities,</strong> only when the law requires it.</li>
           </ul>
@@ -198,10 +198,6 @@ function closeMobileMenu() {
               <strong>Google Analytics</strong> uses cookies to count visits and see which pages are useful. It tells us
               about overall trends, not who you are. You can block these cookies in your browser settings or install
               <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google's opt-out browser add-on</a>.
-            </li>
-            <li>
-              <strong>YouTube videos</strong> on our Portfolio page only load when you click play. Until then, YouTube
-              sets no cookies through our site.
             </li>
           </ul>
           <p>We don't use advertising or social media tracking cookies.</p>

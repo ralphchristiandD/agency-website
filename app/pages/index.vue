@@ -61,7 +61,8 @@ const steps = [
           </p>
           <div class="flex flex-wrap gap-3">
             <NuxtLink to="/contact" class="btn-primary">Let's Work Together</NuxtLink>
-            <NuxtLink to="/portfolio" class="btn-secondary">Explore Our Work</NuxtLink>
+            <!-- Points to Our Services while the Portfolio page is hidden (see backups/portfolio-page) -->
+            <a href="#services" class="btn-secondary">Explore Our Work</a>
           </div>
         </div>
       </div>

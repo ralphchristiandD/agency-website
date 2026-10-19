@@ -25,6 +25,9 @@ do not rewrite the client's wording unless I ask.
 ## Hard rules from the client
 
 - **Only three pages:** Home, Portfolio, Contact Us. (Privacy Policy is a legal footer page, which is allowed.)
+  **Currently the Portfolio page is hidden** (developer's choice, until real samples exist). It's saved in
+  `backups/portfolio-page/` with restore steps; the Git tag `with-portfolio-page` has the full previous site.
+  "Explore Our Work" points to `#services` meanwhile.
 - **No** extra pages, pricing, pricing calculators, or public prices.
 - **No** fake testimonials, invented statistics, made-up client logos, or invented results.
   A portfolio "result" may only appear if the client provides it and confirms it is real.
