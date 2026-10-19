@@ -31,6 +31,7 @@ export const services: Service[] = [
       'Customer Support',
       'Online Research',
       'Inventory and Order Tracking',
+      'Website Design and Development',
       'General Administrative Coordination',
     ],
   },
