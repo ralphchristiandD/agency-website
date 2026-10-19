@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { services } from '~/data/services'
+import { site } from '~/data/site'
 
 useSeoMeta({
   title: 'Administrative, Data & Video Support for Growing Businesses',
@@ -37,6 +38,47 @@ const steps = [
 
 <template>
   <div>
+    <!-- CHOOSE A BUSINESS (client request): Virtual Assistant Support scrolls to the services below;
+         Shirt Printing opens the client's separate shirt website (link set in data/site.ts). -->
+    <section class="border-b border-line bg-mist">
+      <div class="container-page grid gap-3 py-4 sm:grid-cols-2 sm:gap-4 sm:py-5">
+        <a v-reveal href="#services" class="reveal flex items-center gap-4 rounded-xl border border-line bg-white p-4 hover:border-navy/30">
+          <span class="grid size-11 shrink-0 place-items-center rounded-lg bg-accent-soft text-navy">
+            <ServiceIcon name="clipboard" />
+          </span>
+          <span>
+            <span class="block font-semibold text-navy">Virtual Assistant Support</span>
+            <span class="block text-sm text-slate">Admin, data, and video support for your business.</span>
+          </span>
+        </a>
+
+        <component
+          :is="site.shirtPrinting.url ? 'a' : 'div'"
+          v-bind="site.shirtPrinting.url ? { href: site.shirtPrinting.url, target: '_blank', rel: 'noopener' } : {}"
+          v-reveal
+          style="transition-delay: 120ms, 120ms, 0ms, 0ms"
+          class="reveal flex items-center gap-4 rounded-xl border border-line bg-white p-4"
+          :class="site.shirtPrinting.url ? 'hover:border-navy/30' : ''"
+        >
+          <span class="grid size-11 shrink-0 place-items-center rounded-lg bg-accent-soft text-navy">
+            <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8.5 3.5 4 6l1.6 3.6L7.5 8.8V20.5h9V8.8l1.9.8L20 6l-4.5-2.5a3.5 3.5 0 0 1-7 0z" />
+            </svg>
+          </span>
+          <span class="flex-1">
+            <span class="block font-semibold text-navy">{{ site.shirtPrinting.title }}</span>
+            <span class="block text-sm text-slate">
+              {{ site.shirtPrinting.url ? site.shirtPrinting.text : 'Link coming soon.' }}
+            </span>
+          </span>
+          <!-- small "opens another website" icon -->
+          <svg v-if="site.shirtPrinting.url" class="size-4 shrink-0 text-slate" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-label="Opens in a new tab">
+            <path d="M6 3H3.5v9.5H13V10M9 3h4v4M13 3 7.5 8.5" />
+          </svg>
+        </component>
+      </div>
+    </section>
+
     <!-- HERO -->
     <section class="pb-12 pt-10 sm:pb-16 sm:pt-16">
       <div class="container-page">
@@ -125,7 +167,7 @@ const steps = [
             :id="`service-${s.key}`"
             :key="s.key"
             v-reveal
-            :style="{ transitionDelay: `${i * 120}ms, ${i * 120}ms, 0ms` }"
+            :style="{ transitionDelay: `${i * 120}ms, ${i * 120}ms, 0ms, 0ms` }"
             class="reveal flex flex-col overflow-hidden rounded-3xl border border-line bg-white p-8 transition-shadow hover:shadow-[0_24px_60px_-30px_rgba(15,30,61,0.35)] lg:row-span-6 lg:grid lg:grid-rows-subgrid lg:gap-0"
           >
             <!-- Photo runs edge to edge across the top of the card (cancels the card's padding) -->

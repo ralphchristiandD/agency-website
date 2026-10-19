@@ -80,6 +80,10 @@ async function submit() {
             <dd class="mt-1"><a :href="`mailto:${site.email}`" class="link-underline break-all text-accent-mid">{{ site.email }}</a></dd>
           </div>
           <div>
+            <dt class="font-semibold text-navy">Phone</dt>
+            <dd class="mt-1"><a :href="`tel:${site.phoneLink}`" class="link-underline text-accent-mid">{{ site.phone }}</a></dd>
+          </div>
+          <div>
             <dt class="font-semibold text-navy">Location</dt>
             <dd class="mt-1 text-slate">{{ site.location }}</dd>
           </div>

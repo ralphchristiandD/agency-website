@@ -249,7 +249,8 @@ function closeMobileMenu() {
           <h2>Contact</h2>
           <p>
             {{ site.name }} · {{ site.location }}<br>
-            <a :href="`mailto:${site.email}`">{{ site.email }}</a>
+            <a :href="`mailto:${site.email}`">{{ site.email }}</a><br>
+            <a :href="`tel:${site.phoneLink}`">{{ site.phone }}</a>
           </p>
         </section>
       </div>

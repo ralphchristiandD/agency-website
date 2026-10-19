@@ -28,6 +28,9 @@ do not rewrite the client's wording unless I ask.
   **Currently the Portfolio page is hidden** (developer's choice, until real samples exist). It's saved in
   `backups/portfolio-page/` with restore steps; the Git tag `with-portfolio-page` has the full previous site.
   "Explore Our Work" points to `#services` meanwhile.
+- **Client request (2026-10):** the home page opens with two choice cards above the hero:
+  "Virtual Assistant Support" (scrolls to `#services`) and "Shirt Printing" (links to his separate shirt
+  website; set `site.shirtPrinting.url` in `app/data/site.ts`). The client chose the wording "Virtual Assistant".
 - **No** extra pages, pricing, pricing calculators, or public prices.
 - **No** fake testimonials, invented statistics, made-up client logos, or invented results.
   A portfolio "result" may only appear if the client provides it and confirms it is real.

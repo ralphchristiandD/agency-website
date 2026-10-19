@@ -23,6 +23,7 @@ const year = new Date().getFullYear()
         <p class="text-sm font-semibold text-white">Get in touch</p>
         <ul class="mt-3 space-y-2 text-sm">
           <li><a :href="`mailto:${site.email}`" class="link-underline inline-block break-all py-1 hover:text-white sm:py-0">{{ site.email }}</a></li>
+          <li><a :href="`tel:${site.phoneLink}`" class="link-underline inline-block py-1 hover:text-white sm:py-0">{{ site.phone }}</a></li>
           <li>{{ site.location }}</li>
         </ul>
         <ul class="mt-4 flex flex-wrap gap-x-4 text-sm">
