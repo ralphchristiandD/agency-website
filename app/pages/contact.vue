@@ -106,10 +106,10 @@ async function submit() {
           <h2 class="mt-6 text-3xl">Thank you, {{ form.name.split(' ')[0] }}!</h2>
           <!-- The promise matches what they chose: a call if they left a number, otherwise an email -->
           <p v-if="form.phone" class="mt-2 text-slate">
-            We've received your message. Expect a call from our team within 24 hours.
+            We have received your message. Expect a call from our team within 24 hours.
           </p>
           <p v-else class="mt-2 text-slate">
-            We've received your message. We'll reach out by email within 24 hours.
+            We have received your message. We will reach out by email within 24 hours.
           </p>
           <p v-if="demoMode" class="mt-6 inline-block rounded-lg bg-accent-soft px-3 py-2 text-xs text-navy">
             Preview mode: this message wasn't actually sent.
@@ -134,7 +134,7 @@ async function submit() {
           <label class="block">
             <span class="mb-1.5 block text-sm font-medium text-navy">Phone Number <span class="font-normal text-slate">(optional)</span></span>
             <input v-model="form.phone" type="tel" class="field" autocomplete="tel" aria-describedby="phone-hint">
-            <span id="phone-hint" class="mt-1.5 block text-xs text-slate">Prefer a call? Add your number and we'll call you within 24 hours.</span>
+            <span id="phone-hint" class="mt-1.5 block text-xs text-slate">Prefer a call? Add your number and we will call you within 24 hours.</span>
           </label>
           <label class="block">
             <span class="mb-1.5 block text-sm font-medium text-navy">Service Needed *</span>
