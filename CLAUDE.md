@@ -129,7 +129,8 @@ docs/client-brief.md   The original client brief
 ## Before launch checklist
 
 - [x] Business name (Enrich), email, and location set in `app/data/site.ts`
-- [x] Logo: `public/logo.png` (round "EN" mark) via `BrandLogo.vue`, colored by text color (navy/white);
+- [x] Logo (client: always his original black, never recolor): `BrandLogo.vue` shows `public/logo.png`
+      (his Black.png) on light backgrounds and `public/logo-white.png` (his White.png) on the navy footer;
       browser tab icon `public/favicon.png`
 - [ ] Real social links in `app/data/site.ts`
 - [ ] Home photos (`public/images/`) are free Pexels stock picks; swap in real team/workspace photos if the client has them

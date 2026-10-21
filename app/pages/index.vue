@@ -46,7 +46,7 @@ useSeoMeta({
         aria-hidden="true"
       >
         <!-- The logo file has built-in empty space around the mark, so it's drawn larger than it looks -->
-        <BrandLogo class="size-16 text-navy sm:size-20" />
+        <BrandLogo class="size-16 sm:size-20" />
       </span>
 
       <div class="rise relative max-w-sm text-center">

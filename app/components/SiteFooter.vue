@@ -9,7 +9,7 @@ const year = new Date().getFullYear()
     <div class="container-page grid gap-8 border-t border-white/10 py-10 md:grid-cols-[1.5fr_1fr_1fr]">
       <div>
         <p class="flex items-center gap-2 font-serif text-xl leading-none text-white">
-          <BrandLogo class="size-8" />
+          <BrandLogo variant="white" class="size-8" />
           {{ site.name }}
         </p>
       </div>
