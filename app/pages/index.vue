@@ -25,7 +25,7 @@ useSeoMeta({
     <!-- VA SUPPORT -->
     <NuxtLink
       to="/va-support"
-      class="group relative z-10 flex min-h-[50dvh] flex-1 items-center justify-center bg-navy px-8 pb-20 pt-12 text-white transition-colors duration-300 hover:bg-navy-light lg:min-h-dvh lg:py-24"
+      class="group relative z-10 flex min-h-[50dvh] flex-1 items-center justify-center bg-navy px-8 pb-16 pt-10 text-white transition-colors duration-300 hover:bg-navy-light lg:min-h-dvh lg:py-24"
     >
       <!-- Round badge with the Enrich logo, on the seam: bottom edge of this half on phones, right edge on desktop -->
       <span
@@ -36,19 +36,20 @@ useSeoMeta({
         <BrandLogo class="size-16 text-navy sm:size-20" />
       </span>
       <div class="rise max-w-sm text-center">
-        <!-- Laptop with a person on screen -->
-        <svg class="mx-auto size-20 transition-transform duration-300 group-hover:-translate-y-1.5 motion-reduce:transition-none sm:size-24" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="7" y="9" width="34" height="23" rx="2" />
-          <path d="M3 37h42l-2.5 3h-37z" />
-          <circle cx="16" cy="18" r="3" />
-          <path d="M11 27a5 5 0 0 1 10 0" />
-          <path d="M25 16h11M25 21h11M25 26h7" />
-        </svg>
-        <h2 class="mt-6 text-4xl !text-white sm:text-5xl">VA Support</h2>
+        <!-- Photo (the icon version is saved under the Git tag welcome-with-icons).
+             Decorative: the title below already names the choice, so alt is empty. -->
+        <img
+          src="/images/welcome-va.png"
+          alt=""
+          width="580"
+          height="820"
+          class="mx-auto aspect-[4/3] w-40 rounded-2xl object-cover object-[60%_35%] shadow-[0_20px_40px_-20px_rgb(0_0_0/0.6)] ring-1 ring-white/10 transition-transform duration-300 group-hover:-translate-y-1.5 motion-reduce:transition-none sm:w-72"
+        >
+        <h2 class="mt-5 text-4xl !text-white sm:mt-8 sm:text-5xl">VA Support</h2>
         <p class="mt-3 text-lg leading-relaxed text-white/75">
           Virtual assistant support for growing businesses: admin, data, and video.
         </p>
-        <span class="btn-light mt-8 group-hover:bg-mist">Explore VA Support</span>
+        <span class="btn-light mt-6 group-hover:bg-mist sm:mt-8">Explore VA Support</span>
       </div>
     </NuxtLink>
 
@@ -58,15 +59,17 @@ useSeoMeta({
       class="group flex min-h-[50dvh] flex-1 items-center justify-center bg-cream px-8 pb-12 pt-20 text-navy lg:min-h-dvh lg:py-24"
     >
       <div class="rise max-w-sm text-center" style="animation-delay: 120ms">
-        <!-- T-shirt with a small printed picture -->
-        <svg class="mx-auto size-20 transition-transform duration-300 group-hover:-translate-y-1.5 motion-reduce:transition-none sm:size-24" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M17 6 6 11.5l3.5 8 4.5-2V42h20V17.5l4.5 2L42 11.5 31 6a7 7 0 0 1-14 0z" />
-          <rect x="18.5" y="20" width="11" height="9" rx="1" />
-          <path d="M19.5 28l3.5-3.5 2.5 2.5 1.5-1.5 2 2" />
-        </svg>
-        <h2 class="mt-6 text-4xl sm:text-5xl">{{ site.shirtPrinting.title }}</h2>
+        <!-- Photo of his printed shirts (from his shirt website) -->
+        <img
+          src="/images/welcome-shirt.jpg"
+          alt=""
+          width="1280"
+          height="719"
+          class="mx-auto aspect-[4/3] w-40 rounded-2xl object-cover shadow-[0_20px_40px_-20px_rgb(15_30_61/0.45)] ring-1 ring-navy/10 transition-transform duration-300 group-hover:-translate-y-1.5 motion-reduce:transition-none sm:w-72"
+        >
+        <h2 class="mt-5 text-4xl sm:mt-8 sm:text-5xl">{{ site.shirtPrinting.title }}</h2>
         <p class="mt-3 text-lg leading-relaxed text-slate">{{ site.shirtPrinting.text }}</p>
-        <span class="btn-primary mt-8 group-hover:bg-navy-light">Visit Shirt Printing</span>
+        <span class="btn-primary mt-6 group-hover:bg-navy-light sm:mt-8">Visit Shirt Printing</span>
       </div>
     </a>
   </main>
