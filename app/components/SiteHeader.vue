@@ -37,7 +37,7 @@ onMounted(() => {
       <!-- TODO: replace with the client's logo, e.g. <img src="/logo.svg" alt="Enrich" class="h-8"> -->
       <!-- The logo returns to the welcome page (choose VA Support or Shirt Printing) -->
       <NuxtLink to="/" class="flex items-center gap-2.5 font-serif text-[1.75rem] leading-none text-navy" aria-label="Enrich, back to the welcome page">
-        <BrandLogo class="size-10" />
+        <BrandLogo class="size-10 text-black" />
         {{ site.name }}
       </NuxtLink>
 
