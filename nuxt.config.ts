@@ -30,7 +30,9 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#0F1E3D' },
       ],
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        // Browser tab icon: the Enrich logo on white (visible on light and dark tabs)
+        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+        { rel: 'apple-touch-icon', href: '/favicon.png' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {

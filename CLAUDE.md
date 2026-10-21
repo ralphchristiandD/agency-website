@@ -31,7 +31,7 @@ do not rewrite the client's wording unless I ask.
 - **Client request (2026-10): welcome page.** `/` (`app/pages/index.vue`) is a full-screen split page
   with no header/footer: **VA Support** (navy half → `/va-support`, the agency home) and **Shirt Printing**
   (cream half → his separate Google Sites shirt website, same tab; link in `site.shirtPrinting.url`).
-  A round "Enrich" badge sits on the seam (replace with his logo). The agency home now lives at
+  A round badge with his logo sits on the seam. The agency home now lives at
   `app/pages/va-support.vue`; the header "Home" link goes there and the logo returns to `/`.
   The client chose the wording "VA / Virtual Assistant".
 - **No** extra pages, pricing, pricing calculators, or public prices.
@@ -124,7 +124,9 @@ docs/client-brief.md   The original client brief
 ## Before launch checklist
 
 - [x] Business name (Enrich), email, and location set in `app/data/site.ts`
-- [ ] Real social links in `app/data/site.ts`, logo in `SiteHeader.vue`
+- [x] Logo: `public/logo.png` (round "EN" mark) via `BrandLogo.vue`, colored by text color (navy/white);
+      browser tab icon `public/favicon.png`
+- [ ] Real social links in `app/data/site.ts`
 - [ ] Home photos (`public/images/`) are free Pexels stock picks; swap in real team/workspace photos if the client has them
 - [ ] Portfolio page restyled to the new design (next round)
 - [ ] Replace placeholder projects in `app/data/portfolio.ts` with real, approved samples

@@ -27,13 +27,13 @@ useSeoMeta({
       to="/va-support"
       class="group relative z-10 flex min-h-[50dvh] flex-1 items-center justify-center bg-navy px-8 pb-20 pt-12 text-white transition-colors duration-300 hover:bg-navy-light lg:min-h-dvh lg:py-24"
     >
-      <!-- Round badge on the seam: bottom edge of this half on phones, right edge on desktop.
-           TODO: replace the text with the client's round logo, e.g. <img src="/logo.png" alt=""> -->
+      <!-- Round badge with the Enrich logo, on the seam: bottom edge of this half on phones, right edge on desktop -->
       <span
         class="pointer-events-none absolute bottom-0 left-1/2 grid size-20 -translate-x-1/2 translate-y-1/2 place-items-center rounded-full bg-white shadow-[0_12px_40px_-12px_rgb(15_30_61/0.45)] ring-4 ring-cream sm:size-24 lg:bottom-auto lg:left-auto lg:right-0 lg:top-1/2 lg:translate-x-1/2 lg:-translate-y-1/2"
         aria-hidden="true"
       >
-        <span class="font-serif text-xl text-navy sm:text-2xl">Enrich</span>
+        <!-- The logo file has built-in empty space around the mark, so it's drawn larger than it looks -->
+        <BrandLogo class="size-16 text-navy sm:size-20" />
       </span>
       <div class="rise max-w-sm text-center">
         <!-- Laptop with a person on screen -->
