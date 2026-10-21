@@ -31,10 +31,11 @@ do not rewrite the client's wording unless I ask.
 - **Client request (2026-10): welcome page.** `/` (`app/pages/index.vue`) is a full-screen split page
   with no header/footer: **VA Support** (navy half → `/va-support`, the agency home) and **Shirt Printing**
   (cream half → his separate Google Sites shirt website, same tab; link in `site.shirtPrinting.url`).
-  A round badge with his logo sits on the seam. Each half shows a photo (`public/images/welcome-va.png`,
-  `welcome-shirt.jpg`) that lifts slightly on hover; the earlier icon version is saved as the Git tag
-  `welcome-with-icons`. ⚠️ `welcome-va.png` came from another company's site (Results Resourcing):
-  replace it with a licensed photo before launch. The agency home now lives at
+  A round badge with his logo sits on the seam. Each half has a full background photo under a color
+  overlay (navy 86% / cream 90%); on hover the photo zooms slightly and the text lifts.
+  Photos: `public/images/welcome-va.jpg` (woman with headset), `welcome-shirt.jpg` (his shirts).
+  Earlier versions: Git tag `welcome-with-icons` (icons) and commit a7aea07 (small framed photos).
+  ⚠️ `welcome-va.jpg` looks like a downloaded stock photo: confirm it's licensed, or swap for a free one. The agency home now lives at
   `app/pages/va-support.vue`; the header "Home" link goes there and the logo returns to `/`.
   The client chose the wording "VA / Virtual Assistant".
 - **No** extra pages, pricing, pricing calculators, or public prices.
