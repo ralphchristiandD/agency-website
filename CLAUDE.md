@@ -56,7 +56,7 @@ do not rewrite the client's wording unless I ask.
 | Contact form | Web3Forms, key in `nuxt.config.ts` (inbox: enrich.admin@gmail.com). Free plan: real browsers only, so test by hand |
 | Analytics | Google Analytics 4 (ID in `.env` as `NUXT_PUBLIC_GA_ID`) |
 | Videos | YouTube embeds that load only on click (keeps pages fast) |
-| Hosting | Netlify (`netlify.toml`), static output via `npm run generate` |
+| Hosting | Static output via `npm run generate` (folder `dist`). **Netlify free credits ran out (2026-10)**; temporary client preview moving to **Cloudflare Pages** (free, commercial OK, 500 deploys/mo; build `npm run generate`, output `dist`). Final home: **Hostinger** with the client's domain. `netlify.toml` kept for reference |
 
 Do not add a database, Firebase, a UI component library, or a CSS framework other than Tailwind.
 
