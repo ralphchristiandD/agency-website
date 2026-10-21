@@ -37,7 +37,7 @@ useSeoMeta({
           alt=""
           class="size-full object-cover object-[65%_30%] transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none"
         >
-        <span class="absolute inset-0 bg-navy/[0.86] transition-colors duration-500 group-hover:bg-navy/80" />
+        <span class="absolute inset-0 bg-navy/[0.72] transition-colors duration-500 group-hover:bg-navy/[0.66]" />
       </span>
 
       <!-- Round badge with the Enrich logo, on the seam: bottom edge of this half on phones, right edge on desktop -->
@@ -72,7 +72,9 @@ useSeoMeta({
           alt=""
           class="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none"
         >
-        <span class="absolute inset-0 bg-cream/90 transition-colors duration-500 group-hover:bg-cream/85" />
+        <span class="absolute inset-0 bg-cream/[0.76] transition-colors duration-500 group-hover:bg-cream/70" />
+        <!-- Soft cream glow behind the text only, so the busy shirt lettering doesn't fight the words -->
+        <span class="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_center,var(--color-cream)_0%,transparent_100%)] opacity-80" />
       </span>
 
       <div class="rise relative max-w-sm text-center" style="animation-delay: 120ms">

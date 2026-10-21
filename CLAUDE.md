@@ -32,7 +32,8 @@ do not rewrite the client's wording unless I ask.
   with no header/footer: **VA Support** (navy half → `/va-support`, the agency home) and **Shirt Printing**
   (cream half → his separate Google Sites shirt website, same tab; link in `site.shirtPrinting.url`).
   A round badge with his logo sits on the seam. Each half has a full background photo under a color
-  overlay (navy 86% / cream 90%); on hover the photo zooms slightly and the text lifts.
+  overlay (navy 72% / cream 76%, developer wanted clearer photos), plus a soft cream glow behind the
+  shirt text for readability; on hover the photo zooms slightly and the text lifts.
   Photos: `public/images/welcome-va.jpg` (woman with headset), `welcome-shirt.jpg` (his shirts).
   Earlier versions: Git tag `welcome-with-icons` (icons) and commit a7aea07 (small framed photos).
   ⚠️ `welcome-va.jpg` looks like a downloaded stock photo: confirm it's licensed, or swap for a free one. The agency home now lives at
