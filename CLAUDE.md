@@ -53,7 +53,7 @@ do not rewrite the client's wording unless I ask.
 | Framework | Nuxt 4 (Vue 3, `<script setup lang="ts">`) |
 | Styling | Tailwind CSS v4 (configured in CSS, no tailwind.config.js) |
 | Portfolio data | `app/data/portfolio.ts` (plain TypeScript list, no database) |
-| Contact form | Web3Forms (key in `.env` as `NUXT_PUBLIC_WEB3FORMS_KEY`) |
+| Contact form | Web3Forms, key in `nuxt.config.ts` (inbox: enrich.admin@gmail.com). Free plan: real browsers only, so test by hand |
 | Analytics | Google Analytics 4 (ID in `.env` as `NUXT_PUBLIC_GA_ID`) |
 | Videos | YouTube embeds that load only on click (keeps pages fast) |
 | Hosting | Netlify (`netlify.toml`), static output via `npm run generate` |
