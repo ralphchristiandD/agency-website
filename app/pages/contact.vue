@@ -106,10 +106,10 @@ async function submit() {
           <h2 class="mt-6 text-3xl">Thank you, {{ form.name.split(' ')[0] }}!</h2>
           <!-- The promise matches what they chose: a call if they left a number, otherwise an email -->
           <p v-if="form.phone" class="mt-2 text-slate">
-            We've received your inquiry. Expect a call from our team within 24 hours at <span class="font-medium text-navy">{{ form.phone }}</span>.
+            We've received your message. Expect a call from our team within 24 hours.
           </p>
           <p v-else class="mt-2 text-slate">
-            We've received your inquiry. We'll reach out by email within 24 hours.
+            We've received your message. We'll reach out by email within 24 hours.
           </p>
           <p v-if="demoMode" class="mt-6 inline-block rounded-lg bg-accent-soft px-3 py-2 text-xs text-navy">
             Preview mode: this message wasn't actually sent.
