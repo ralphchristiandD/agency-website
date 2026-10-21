@@ -47,7 +47,8 @@ async function submit() {
       method: 'POST',
       body: {
         access_key: config.public.web3formsKey,
-        subject: `New inquiry: ${form.service || 'Website'} from ${form.name}`,
+        // "(call requested)" flags inquiries where the visitor left a phone number
+        subject: `New inquiry: ${form.service || 'Website'} from ${form.name}${form.phone ? ' (call requested)' : ''}`,
         from_name: `${site.name} Website`,
         'Full Name': form.name,
         'Company Name': form.company,
@@ -103,7 +104,13 @@ async function submit() {
             <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
           </span>
           <h2 class="mt-6 text-3xl">Thank you, {{ form.name.split(' ')[0] }}!</h2>
-          <p class="mt-2 text-slate">We've received your message and will get back to you soon.</p>
+          <!-- The promise matches what they chose: a call if they left a number, otherwise an email -->
+          <p v-if="form.phone" class="mt-2 text-slate">
+            We've received your inquiry. Expect a call from our team within 24 hours at <span class="font-medium text-navy">{{ form.phone }}</span>.
+          </p>
+          <p v-else class="mt-2 text-slate">
+            We've received your inquiry. We'll reach out by email within 24 hours.
+          </p>
           <p v-if="demoMode" class="mt-6 inline-block rounded-lg bg-accent-soft px-3 py-2 text-xs text-navy">
             Preview mode: this message wasn't actually sent.
           </p>
@@ -126,7 +133,8 @@ async function submit() {
           </label>
           <label class="block">
             <span class="mb-1.5 block text-sm font-medium text-navy">Phone Number <span class="font-normal text-slate">(optional)</span></span>
-            <input v-model="form.phone" type="tel" class="field" autocomplete="tel">
+            <input v-model="form.phone" type="tel" class="field" autocomplete="tel" aria-describedby="phone-hint">
+            <span id="phone-hint" class="mt-1.5 block text-xs text-slate">Prefer a call? Add your number and we'll call you within 24 hours.</span>
           </label>
           <label class="block">
             <span class="mb-1.5 block text-sm font-medium text-navy">Service Needed *</span>
