@@ -35,7 +35,7 @@ useSeoMeta({
         <img
           src="/images/welcome-va.jpg"
           alt=""
-          class="size-full object-cover object-[65%_30%] transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none"
+          class="size-full object-cover object-[72%_30%] transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none"
         >
         <span class="absolute inset-0 bg-navy/[0.72] transition-colors duration-500 group-hover:bg-navy/[0.66]" />
       </span>
