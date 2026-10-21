@@ -9,7 +9,7 @@ export const site = {
   // The client's shirt printing business has its own website (Google Sites).
   shirtPrinting: {
     title: 'Shirt Printing',
-    text: 'Custom shirts printed for your brand, team, or event.',
+    text: 'Luxury in every print. Custom shirts for your brand, team, or event.',
     url: 'https://sites.google.com/view/enrichtog/home',
   },
   socials: [

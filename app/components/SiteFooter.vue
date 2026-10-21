@@ -14,7 +14,7 @@ const year = new Date().getFullYear()
       <div>
         <p class="text-sm font-semibold text-white">Pages</p>
         <ul class="mt-3 space-y-2 text-sm">
-          <li><NuxtLink to="/" class="link-underline inline-block py-1 hover:text-white sm:py-0">Home</NuxtLink></li>
+          <li><NuxtLink to="/va-support" class="link-underline inline-block py-1 hover:text-white sm:py-0">Home</NuxtLink></li>
           <li><NuxtLink to="/contact" class="link-underline inline-block py-1 hover:text-white sm:py-0">Contact Us</NuxtLink></li>
         </ul>
       </div>

@@ -45,7 +45,8 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       // '/portfolio' is hidden for now (saved in backups/portfolio-page)
-      routes: ['/', '/contact', '/privacy'],
+      // '/' is the welcome page (choose VA Support or Shirt Printing); '/va-support' is the agency site
+      routes: ['/', '/va-support', '/contact', '/privacy'],
     },
   },
 })

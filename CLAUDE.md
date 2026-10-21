@@ -28,9 +28,12 @@ do not rewrite the client's wording unless I ask.
   **Currently the Portfolio page is hidden** (developer's choice, until real samples exist). It's saved in
   `backups/portfolio-page/` with restore steps; the Git tag `with-portfolio-page` has the full previous site.
   "Explore Our Work" points to `#services` meanwhile.
-- **Client request (2026-10):** the home page opens with two choice cards above the hero:
-  "Virtual Assistant Support" (scrolls to `#services`) and "Shirt Printing" (links to his separate shirt
-  website; set `site.shirtPrinting.url` in `app/data/site.ts`). The client chose the wording "Virtual Assistant".
+- **Client request (2026-10): welcome page.** `/` (`app/pages/index.vue`) is a full-screen split page
+  with no header/footer: **VA Support** (navy half → `/va-support`, the agency home) and **Shirt Printing**
+  (cream half → his separate Google Sites shirt website, same tab; link in `site.shirtPrinting.url`).
+  A round "Enrich" badge sits on the seam (replace with his logo). The agency home now lives at
+  `app/pages/va-support.vue`; the header "Home" link goes there and the logo returns to `/`.
+  The client chose the wording "VA / Virtual Assistant".
 - **No** extra pages, pricing, pricing calculators, or public prices.
 - **No** fake testimonials, invented statistics, made-up client logos, or invented results.
   A portfolio "result" may only appear if the client provides it and confirms it is real.
@@ -68,6 +71,7 @@ Always use these tokens. Never hard-code hex colors in components.
 | `accent-mid` | #255080 | Hero headline 2nd line; all small blue text (eyebrow labels, text links) |
 | `accent` | #3B82C4 | Large text, icons, bars, dots only. Fails contrast as small text on white (4.06:1) |
 | `accent-soft` | #E8F1FA | Icon backgrounds, tinted boxes |
+| `cream` | #F4EFE6 | Welcome page only: the Shirt Printing half |
 
 - **Fonts:** Newsreader (`font-serif`) for H1/H2 headlines, Hanken Grotesk (`font-sans`) for body,
   buttons, labels, and H3/H4. Both load from Google Fonts in `nuxt.config.ts`.
@@ -98,7 +102,8 @@ Always use these tokens. Never hard-code hex colors in components.
 app/
   app.vue              Root: default SEO title template + Google Analytics
   layouts/default.vue  Header + page + footer wrapper
-  pages/               One file = one page (index = Home, portfolio, contact, privacy)
+  pages/               One file = one page (index = welcome split page, va-support = agency home,
+                       contact, privacy; portfolio is hidden in backups/)
   components/          Reusable pieces (SiteHeader, SiteFooter, PortfolioCard, CtaBand, ...)
   data/
     site.ts            Business name, email, location, social links  ← client details go here

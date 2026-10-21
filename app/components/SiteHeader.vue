@@ -6,7 +6,7 @@ const scrolled = ref(false)
 const route = useRoute()
 
 const links = [
-  { label: 'Home', to: '/' },
+  { label: 'Home', to: '/va-support' },
   { label: 'Contact Us', to: '/contact' },
 ]
 
@@ -35,7 +35,8 @@ onMounted(() => {
   >
     <nav class="container-page flex h-18 items-center justify-between" aria-label="Main">
       <!-- TODO: replace with the client's logo, e.g. <img src="/logo.svg" alt="Enrich" class="h-8"> -->
-      <NuxtLink to="/" class="font-serif text-[1.75rem] leading-none text-navy" aria-label="Enrich, home">
+      <!-- The logo returns to the welcome page (choose VA Support or Shirt Printing) -->
+      <NuxtLink to="/" class="font-serif text-[1.75rem] leading-none text-navy" aria-label="Enrich, back to the welcome page">
         {{ site.name }}
       </NuxtLink>
 

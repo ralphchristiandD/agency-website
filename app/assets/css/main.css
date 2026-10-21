@@ -18,6 +18,7 @@
   --color-accent-mid: #255080;  /* halfway between navy and accent (hero headline, 2nd line) */
   --color-accent: #3B82C4;      /* subtle accent: links, small highlights */
   --color-accent-soft: #E8F1FA; /* accent tint backgrounds */
+  --color-cream: #F4EFE6;       /* welcome page: Shirt Printing half */
 }
 
 @layer base {
