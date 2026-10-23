@@ -17,9 +17,9 @@ export default defineNuxtConfig({
     public: {
       siteUrl: 'https://www.example.com', // TODO: client's real domain
       siteName: 'Enrich',
-      // Web3Forms access key: inquiries go to enrich.admin@gmail.com.
+      // Web3Forms access key: inquiries go to enrich.tog@gmail.com (new key, 2026-10; the old one sent to enrich.admin).
       // Safe to keep in code: it can only send messages to that inbox, not read them.
-      web3formsKey: '404712eb-a9a7-4126-b81c-fead85e83469',
+      web3formsKey: '5950f7cb-f646-4d09-84eb-b07424330010',
       gaId: '', // set NUXT_PUBLIC_GA_ID in .env (Google Analytics 4, e.g. G-XXXXXXX)
     },
   },
