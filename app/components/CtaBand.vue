@@ -20,7 +20,7 @@ defineProps<{ title: string; button: string }>()
 
     <div class="container-page flex flex-col items-center py-20 text-center sm:py-28">
       <h2 class="max-w-3xl text-4xl leading-[1.1] !text-white sm:text-6xl">{{ title }}</h2>
-      <NuxtLink to="/contact" class="btn-light mt-10">{{ button }}</NuxtLink>
+      <EmailStart :label="button" class="mt-10 max-w-md !border-white" />
     </div>
   </section>
 </template>
