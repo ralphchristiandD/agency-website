@@ -46,7 +46,7 @@ const steps = [
         width="1600"
         height="1067"
         fetchpriority="high"
-        class="absolute inset-0 -z-10 size-full object-cover grayscale"
+        class="photo-in absolute inset-0 -z-10 size-full object-cover grayscale"
       >
       <!-- White fade so the text stays easy to read: from the bottom on phones, from the left on desktop -->
       <div class="absolute inset-0 -z-10 bg-linear-to-t from-white/90 via-white/70 via-55% to-white/15 lg:bg-linear-to-r lg:from-white/80 lg:via-white/50 lg:via-40% lg:to-white/0 lg:to-70%" />
