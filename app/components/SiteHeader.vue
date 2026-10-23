@@ -50,10 +50,6 @@ onMounted(() => {
         >
           {{ link.label }}
         </NuxtLink>
-        <!-- A plain link like the others (developer's choice); no "active" underline since Contact Us already has it -->
-        <NuxtLink to="/contact" class="link-underline whitespace-nowrap py-1 text-[0.9375rem] font-medium text-slate transition-colors hover:text-navy">
-          Get Started
-        </NuxtLink>
       </div>
 
       <button
@@ -82,11 +78,10 @@ onMounted(() => {
             v-for="link in links"
             :key="link.to"
             :to="link.to"
-            class="flex min-h-13 items-center border-b border-line font-serif text-2xl text-navy"
+            class="flex min-h-13 items-center border-b border-line font-serif text-2xl text-navy last:border-b-0"
           >
             {{ link.label }}
           </NuxtLink>
-          <NuxtLink to="/contact" class="flex min-h-13 items-center font-serif text-2xl text-navy">Get Started</NuxtLink>
         </div>
       </div>
     </Transition>

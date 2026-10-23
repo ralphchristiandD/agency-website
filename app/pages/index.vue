@@ -55,7 +55,7 @@ useSeoMeta({
           <p class="mt-4 text-lg leading-relaxed text-white/85">
             Virtual assistant support for growing businesses: admin, data, and video.
           </p>
-          <span class="btn-light mt-7 group-hover:bg-mist sm:mt-9">Explore VA Support</span>
+          <span class="btn-light mt-7 !rounded-full group-hover:bg-mist sm:mt-9">Explore VA Support</span>
         </div>
       </div>
     </NuxtLink>
@@ -81,7 +81,7 @@ useSeoMeta({
         <div class="transition-transform duration-300 group-hover:-translate-y-1.5 motion-reduce:transition-none">
           <h2 class="text-4xl sm:text-6xl">{{ site.shirtPrinting.title }}</h2>
           <p class="mt-4 text-lg leading-relaxed text-charcoal">{{ site.shirtPrinting.text }}</p>
-          <span class="btn-primary mt-7 group-hover:bg-navy-light sm:mt-9">Visit Shirt Printing</span>
+          <span class="btn-primary mt-7 !rounded-full group-hover:bg-navy-light sm:mt-9">Visit Shirt Printing</span>
         </div>
       </div>
     </a>
