@@ -1,0 +1,13 @@
+// Cloudflare Workers settings: serves the pre-built website files (no server code).
+// Build on Cloudflare with:  NITRO_PRESET=static npm run generate
+// Then deploy with:          npx wrangler deploy
+{
+  "name": "enrich-business",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    // Where `npm run generate` puts the finished website
+    "directory": "./.output/public",
+    // Unknown addresses show the site's own "page not found" page
+    "not_found_handling": "404-page"
+  }
+}
