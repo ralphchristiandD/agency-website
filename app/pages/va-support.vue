@@ -7,11 +7,11 @@ useSeoMeta({
     'U.S.-led business support: administrative operations, data analytics and reporting, and professional video editing. Less busywork, better insights, greater impact.',
 })
 
-// Each headline phrase is paired with the service it stands for, shading from navy to light blue
+// The headline shades line by line from navy to light blue
 const heroLines = [
-  { text: 'Less Busywork.', visual: 'checklist', color: 'text-navy' },
-  { text: 'Better Insights.', visual: 'chart', color: 'text-accent-mid' },
-  { text: 'Greater Impact.', visual: 'video', color: 'text-accent' },
+  { text: 'Less Busywork.', color: 'text-navy' },
+  { text: 'Better Insights.', color: 'text-accent-mid' },
+  { text: 'Greater Impact.', color: 'text-accent' },
 ] as const
 
 const highlights = [
@@ -37,64 +37,38 @@ const steps = [
 
 <template>
   <div>
-    <!-- HERO: black-and-white staircase photo ("steps up"), faded to white behind the text.
-         The three cards (checklist, chart, video) stand for the three services.
-         To change the photo, replace /public/images/hero-staircase.jpg. -->
-    <section class="pb-20 pt-2 sm:pb-28 sm:pt-4">
-      <div class="container-page">
-        <div class="relative isolate overflow-hidden rounded-3xl bg-white">
-          <img
-            src="/images/hero-staircase.jpg"
-            alt=""
-            width="1600"
-            height="1067"
-            fetchpriority="high"
-            class="absolute inset-0 -z-10 size-full object-cover grayscale"
-          >
-          <!-- White fade so the text stays easy to read: from the bottom on phones, from the left on desktop -->
-          <div class="absolute inset-0 -z-10 bg-linear-to-t from-white/95 via-white/85 via-60% to-white/40 lg:bg-linear-to-r lg:from-white/95 lg:via-white/80 lg:via-45% lg:to-white/10 lg:to-75%" />
+    <!-- HERO: black-and-white staircase photo ("steps up") across the full width of the screen,
+         faded to white behind the text. To change the photo, replace /public/images/hero-staircase.jpg. -->
+    <section class="relative isolate overflow-hidden bg-white">
+      <img
+        src="/images/hero-staircase.jpg"
+        alt=""
+        width="1600"
+        height="1067"
+        fetchpriority="high"
+        class="absolute inset-0 -z-10 size-full object-cover grayscale"
+      >
+      <!-- White fade so the text stays easy to read: from the bottom on phones, from the left on desktop -->
+      <div class="absolute inset-0 -z-10 bg-linear-to-t from-white/95 via-white/85 via-60% to-white/40 lg:bg-linear-to-r lg:from-white/95 lg:via-white/80 lg:via-50% lg:to-white/10 lg:to-80%" />
 
-          <div class="flex flex-col gap-8 px-6 pb-10 pt-6 sm:px-12 sm:pb-14 sm:pt-10 lg:min-h-[40rem] lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:p-16">
-            <!-- Service cards: a row along the top on phones and tablets -->
-            <div class="rise grid max-w-sm grid-cols-3 gap-2 lg:hidden" aria-hidden="true">
-              <span v-for="line in heroLines" :key="line.visual" class="rounded-lg shadow-md shadow-navy/10">
-                <HeroVisual :kind="line.visual" compact />
-              </span>
-            </div>
-
-            <div>
-              <p class="eyebrow rise">Business support, done right</p>
-              <h1 class="mt-5 text-[2.25rem] leading-[1.08] sm:text-6xl md:text-7xl lg:text-[4.25rem] xl:text-[5rem]">
-                <span
-                  v-for="(line, i) in heroLines"
-                  :key="line.text"
-                  class="rise block"
-                  :class="line.color"
-                  :style="{ animationDelay: `${i * 90}ms` }"
-                >{{ line.text }}</span>
-              </h1>
-              <p class="rise mt-6 max-w-xl text-lg leading-relaxed text-slate" style="animation-delay: 300ms">
-                From administrative operations and data analytics to professional video editing, we help businesses work smarter, stay organized, and grow.
-              </p>
-              <div class="rise mt-8 flex flex-wrap gap-3" style="animation-delay: 300ms">
-                <NuxtLink to="/contact" class="btn-primary">Let's Work Together</NuxtLink>
-                <!-- Points to Our Services while the Portfolio page is hidden (see backups/portfolio-page) -->
-                <a href="#services" class="btn-secondary">Explore Our Work</a>
-              </div>
-            </div>
-
-            <!-- Service cards: a staggered stack on the right on desktop -->
-            <div class="rise hidden shrink-0 flex-col gap-4 lg:flex" style="animation-delay: 200ms" aria-hidden="true">
-              <span
-                v-for="(line, i) in heroLines"
-                :key="line.visual"
-                class="w-fit rounded-xl shadow-lg shadow-navy/10"
-                :class="{ '-ml-10': i === 1 }"
-              >
-                <HeroVisual :kind="line.visual" />
-              </span>
-            </div>
-          </div>
+      <div class="container-page pb-16 pt-28 sm:pb-24 sm:pt-40 lg:flex lg:min-h-[44rem] lg:flex-col lg:justify-center lg:py-24">
+        <p class="eyebrow rise">Business support, done right</p>
+        <h1 class="mt-5 text-[2.375rem] leading-[1.08] sm:text-6xl md:text-7xl lg:text-[5rem]">
+          <span
+            v-for="(line, i) in heroLines"
+            :key="line.text"
+            class="rise block"
+            :class="line.color"
+            :style="{ animationDelay: `${i * 90}ms` }"
+          >{{ line.text }}</span>
+        </h1>
+        <p class="rise mt-6 max-w-xl text-lg leading-relaxed text-slate" style="animation-delay: 300ms">
+          From administrative operations and data analytics to professional video editing, we help businesses work smarter, stay organized, and grow.
+        </p>
+        <div class="rise mt-8 flex flex-wrap gap-3" style="animation-delay: 300ms">
+          <NuxtLink to="/contact" class="btn-primary">Let's Work Together</NuxtLink>
+          <!-- Points to Our Services while the Portfolio page is hidden (see backups/portfolio-page) -->
+          <a href="#services" class="btn-secondary">Explore Our Work</a>
         </div>
       </div>
     </section>

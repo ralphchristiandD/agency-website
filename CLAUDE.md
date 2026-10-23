@@ -82,10 +82,10 @@ Always use these tokens. Never hard-code hex colors in components.
 
 - **Fonts:** Newsreader (`font-serif`) for H1/H2 headlines, Hanken Grotesk (`font-sans`) for body,
   buttons, labels, and H3/H4. Both load from Google Fonts in `nuxt.config.ts`.
-- **VA Support hero (developer's choice, 2026-10):** a rounded panel with the black-and-white staircase photo
-  (`public/images/hero-staircase.jpg`, the developer's file, used unchanged) faded to white behind the text,
-  plus the three HeroVisual cards (checklist, chart, video) for the brief's "visual representing operations,
-  data, and creative production". The laptop photo band under the hero was removed (too many photos).
+- **VA Support hero (developer's choice, 2026-10):** the black-and-white staircase photo
+  (`public/images/hero-staircase.jpg`, the developer's file, used unchanged) across the full screen width,
+  no rounded box, faded to white behind the text. No icon cards (developer removed them; `HeroVisual.vue`
+  is now unused). The laptop photo band under the hero was removed (too many photos).
   Previous hero: commit before "VA Support hero: black-and-white staircase photo".
   ⚠️ Confirm the staircase photo is free to use (Pexels/Unsplash) before launch.
 - **Headlines:** H1/H2 are serif at regular weight; size does the work (never bold the serif).
