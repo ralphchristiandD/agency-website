@@ -101,6 +101,8 @@ Always use these tokens. Never hard-code hex colors in components.
 - **Corners:** buttons and inputs `rounded-lg`, panels/images `rounded-xl`, home service/feature cards `rounded-3xl`.
 - **Buttons:** use `btn-primary`, `btn-secondary`, or `btn-light`. Don't invent new button styles
   or add arrows to button text. Text links use `link-underline`.
+  Exception (developer's choice, 2026-10): the VA Support hero's two calls to action are `link-arrow`
+  text links (thin underline + small ↗ arrow), not buttons.
 - **Animation:** the hero `rise` entrance on load; on the Home page only, a gentle `v-reveal` fade-up
   on each section (cards and steps staggered ~120ms apart; developer's choice); hover/menu transitions.
   Other pages don't use `v-reveal`. Everything is switched off under reduced motion.

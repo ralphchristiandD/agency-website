@@ -66,10 +66,19 @@ const steps = [
         <p class="rise mt-6 max-w-xl text-lg leading-relaxed text-charcoal" style="animation-delay: 300ms">
           From administrative operations and data analytics to professional video editing, we help businesses work smarter, stay organized, and grow.
         </p>
-        <div class="rise mt-8 flex flex-wrap gap-3" style="animation-delay: 300ms">
-          <NuxtLink to="/contact" class="btn-primary">Let's Work Together</NuxtLink>
+        <!-- Text links with an arrow instead of buttons (developer's choice) -->
+        <div class="rise mt-6 flex flex-wrap gap-x-8 gap-y-1" style="animation-delay: 300ms">
+          <NuxtLink to="/contact" class="link-arrow text-navy">
+            <span>Let's Work Together
+              <svg class="size-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4.5 11.5l7-7M6 4.5h5.5V10" /></svg>
+            </span>
+          </NuxtLink>
           <!-- Points to Our Services while the Portfolio page is hidden (see backups/portfolio-page) -->
-          <a href="#services" class="btn-secondary">Explore Our Work</a>
+          <a href="#services" class="link-arrow text-charcoal hover:text-navy">
+            <span>Explore Our Work
+              <svg class="size-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4.5 11.5l7-7M6 4.5h5.5V10" /></svg>
+            </span>
+          </a>
         </div>
       </div>
     </section>
