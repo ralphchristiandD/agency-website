@@ -119,18 +119,10 @@
 .rise {
   animation: rise 0.7s ease both;
 }
-/* Hero photo: fades in and settles from a very slight zoom when the page opens */
-@keyframes photo-in {
-  from { opacity: 0; transform: scale(1.03); }
-  to { opacity: 1; transform: none; }
-}
-.photo-in {
-  animation: photo-in 0.6s ease-out both;
-}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .rise, .photo-in { animation: none; }
+  .rise { animation: none; }
   .link-underline { transition: none; }
 }
