@@ -16,7 +16,7 @@ function start() {
 
 <template>
   <form
-    class="flex w-full items-center gap-1 rounded-lg border border-line bg-white p-1 transition-colors focus-within:border-accent"
+    class="flex w-full items-center gap-1 rounded-full border border-line bg-white p-1 transition-colors focus-within:border-accent"
     @submit.prevent="start"
   >
     <label :for="id" class="sr-only">Email address</label>
@@ -27,13 +27,13 @@ function start() {
       required
       autocomplete="email"
       placeholder="Email address"
-      class="min-w-0 flex-1 bg-transparent px-3 text-charcoal placeholder:text-slate/70 focus:outline-none"
-      :class="props.size === 'sm' ? 'text-sm' : 'text-[0.9375rem]'"
+      class="min-w-0 flex-1 bg-transparent px-4 text-sm text-charcoal placeholder:text-slate/70 focus:outline-none"
     >
+    <!-- Round (pill) shape, developer's choice for this box -->
     <button
       type="submit"
-      class="btn-primary shrink-0"
-      :class="props.size === 'sm' ? '!min-h-9 !px-4 !py-1.5 text-sm' : ''"
+      class="btn-primary shrink-0 !rounded-full text-sm"
+      :class="props.size === 'sm' ? '!min-h-9 !px-4 !py-1.5' : '!min-h-10 !px-5 !py-2'"
     >
       {{ props.label }}
     </button>
