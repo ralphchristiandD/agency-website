@@ -15,24 +15,16 @@ const projectTypes = ['One-Time Project', 'Ongoing Support', 'Not Sure Yet']
 // Pre-select the service when arriving from a service card (e.g. /contact?service=video)
 const fromCard: Record<string, string> = { admin: 'Administrative Support', analytics: 'Data Analytics', video: 'Video Editing' }
 
-// Pre-fill the email when arriving from a "Get Started" email box (e.g. /contact?email=jane@example.com)
-const emailFromLink = () => (typeof route.query.email === 'string' ? route.query.email : '')
-
 const form = reactive({
   name: '',
   company: '',
-  email: emailFromLink(),
+  email: '',
   phone: '',
   service: fromCard[String(route.query.service)] ?? '',
   projectType: '',
   description: '',
   budget: '',
   botcheck: '', // hidden spam trap; real people leave it empty
-})
-
-// Also when the header email box is used while already on this page
-watch(() => route.query.email, () => {
-  if (emailFromLink()) form.email = emailFromLink()
 })
 
 const status = ref<'idle' | 'sending' | 'sent' | 'error'>('idle')
