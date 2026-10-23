@@ -56,7 +56,7 @@ do not rewrite the client's wording unless I ask.
 | Contact form | Web3Forms, key in `nuxt.config.ts` (inbox: enrich.admin@gmail.com). Free plan: real browsers only, so test by hand |
 | Analytics | Google Analytics 4 (ID in `.env` as `NUXT_PUBLIC_GA_ID`) |
 | Videos | YouTube embeds that load only on click (keeps pages fast) |
-| Hosting | Static output via `npm run generate` (folder `dist`). **Netlify free credits ran out (2026-10)**; temporary client preview is live on **Cloudflare Workers** (free, commercial OK, 500 builds/mo):
+| Hosting | Static output via `npm run generate` (folder `dist`). **Netlify free credits ran out (2026-10)**; temporary client preview is live on **Cloudflare Workers** (free, commercial OK; static files are free and unlimited; 3,000 build minutes/mo, a build takes ~1.5 min):
 https://enrich-business.rcddetchosa.workers.dev — every push to `master` on GitHub rebuilds it automatically
 (build `NITRO_PRESET=static npm run generate`, deploy `npx wrangler deploy`, settings in `wrangler.jsonc`). Final home: **Hostinger** with the client's domain. `netlify.toml` kept for reference |
 
