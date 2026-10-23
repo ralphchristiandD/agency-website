@@ -17,7 +17,7 @@ definePageMeta({ layout: false })
 useSeoMeta({
   title: 'VA Support & Shirt Printing',
   description:
-    'Enrich: virtual assistant support (administrative, data, and video) and custom shirt printing, based in California and serving clients nationwide across the USA.',
+    'Enrich: virtual assistant support (administrative, data, and video) and custom shirt printing, based in California and serving clients nationwide across the U.S.A.',
 })
 </script>
 

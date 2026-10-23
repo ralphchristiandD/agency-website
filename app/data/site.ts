@@ -5,7 +5,7 @@ export const site = {
   email: 'enrich.tog@gmail.com',
   phone: '+1 440-865-0944',     // shown on the page
   phoneLink: '+14408650944',    // used for tap-to-call (no spaces or dashes)
-  location: 'California-Based | Serving Clients Nationwide Across the USA', // client's wording (2026-10)
+  location: 'California-Based | Serving Clients Nationwide Across the U.S.A', // client's wording (2026-10)
   state: 'California', // used inside sentences, e.g. "based in California"
   // The client's shirt printing business has its own website (Google Sites).
   shirtPrinting: {
