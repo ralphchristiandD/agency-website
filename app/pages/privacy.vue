@@ -119,7 +119,7 @@ function closeMobileMenu() {
         <section id="who-we-are" class="space-y-4">
           <h2>Who we are</h2>
           <p>
-            {{ site.name }} is a U.S.-led business support agency based in {{ site.location }}. We provide administrative
+            {{ site.name }} is a U.S.-led business support agency based in {{ site.state }}. We provide administrative
             support, data analytics and reporting, and video editing to businesses, entrepreneurs, and content creators.
             Some of our team members work remotely from the Philippines.
           </p>

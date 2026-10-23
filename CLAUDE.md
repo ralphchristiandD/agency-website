@@ -140,7 +140,8 @@ docs/client-brief.md   The original client brief
 - [x] Logo (client: always his original black, never recolor): `BrandLogo.vue` shows `public/logo.png`
       (his Black.png) on light backgrounds and `public/logo-white.png` (his White.png) on the navy footer;
       browser tab icon `public/favicon.png`
-- [ ] Real social links in `app/data/site.ts`
+- [ ] Real social links in `app/data/site.ts` (hidden for now at the client's request: `showSocials: false`;
+      location shows the client's wording "California-Based | Serving Clients Nationwide Across the USA")
 - [ ] Home photos (`public/images/`) are free Pexels stock picks; swap in real team/workspace photos if the client has them
 - [ ] Portfolio page restyled to the new design (next round)
 - [ ] Replace placeholder projects in `app/data/portfolio.ts` with real, approved samples

@@ -29,7 +29,7 @@ const year = new Date().getFullYear()
           <li><a :href="`tel:${site.phoneLink}`" class="link-underline inline-block py-1 hover:text-white sm:py-0">{{ site.phone }}</a></li>
           <li>{{ site.location }}</li>
         </ul>
-        <ul class="mt-4 flex flex-wrap gap-x-4 text-sm">
+        <ul v-if="site.showSocials" class="mt-4 flex flex-wrap gap-x-4 text-sm">
           <li v-for="s in site.socials" :key="s.label">
             <a :href="s.href" target="_blank" rel="noopener" class="link-underline inline-block py-1 hover:text-white sm:py-0">{{ s.label }}</a>
           </li>

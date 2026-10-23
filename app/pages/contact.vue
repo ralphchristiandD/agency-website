@@ -88,7 +88,7 @@ async function submit() {
             <dt class="font-semibold text-navy">Location</dt>
             <dd class="mt-1 text-slate">{{ site.location }}</dd>
           </div>
-          <div>
+          <div v-if="site.showSocials">
             <dt class="font-semibold text-navy">Follow us</dt>
             <dd class="mt-1 flex flex-wrap gap-x-5">
               <a v-for="s in site.socials" :key="s.label" :href="s.href" target="_blank" rel="noopener" class="link-underline py-1 text-slate hover:text-navy">{{ s.label }}</a>
