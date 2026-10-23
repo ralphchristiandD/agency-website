@@ -37,52 +37,65 @@ const steps = [
 
 <template>
   <div>
-    <!-- HERO -->
-    <section class="pb-12 pt-10 sm:pb-16 sm:pt-16">
+    <!-- HERO: black-and-white staircase photo ("steps up"), faded to white behind the text.
+         The three cards (checklist, chart, video) stand for the three services.
+         To change the photo, replace /public/images/hero-staircase.jpg. -->
+    <section class="pb-20 pt-2 sm:pb-28 sm:pt-4">
       <div class="container-page">
-        <p class="eyebrow rise">Business support, done right</p>
-        <h1 class="@container mt-5 text-[2.375rem] leading-[1.05] sm:text-6xl md:text-7xl lg:text-[5.75rem]">
-          <span
-            v-for="(line, i) in heroLines"
-            :key="line.text"
-            class="rise flex items-center justify-between gap-2.5 border-b border-line py-2 sm:gap-8 sm:py-3"
-            :style="{ animationDelay: `${i * 90}ms` }"
+        <div class="relative isolate overflow-hidden rounded-3xl bg-white">
+          <img
+            src="/images/hero-staircase.jpg"
+            alt=""
+            width="1600"
+            height="1067"
+            fetchpriority="high"
+            class="absolute inset-0 -z-10 size-full object-cover grayscale"
           >
-            <span :class="line.color">{{ line.text }}</span>
-            <!-- Full illustration on desktop, compact one on phones and tablets -->
-            <span class="hidden lg:block"><HeroVisual :kind="line.visual" /></span>
-            <span class="shrink-0 lg:hidden"><HeroVisual :kind="line.visual" compact /></span>
-          </span>
-        </h1>
+          <!-- White fade so the text stays easy to read: from the bottom on phones, from the left on desktop -->
+          <div class="absolute inset-0 -z-10 bg-linear-to-t from-white/95 via-white/85 via-60% to-white/40 lg:bg-linear-to-r lg:from-white/95 lg:via-white/80 lg:via-45% lg:to-white/10 lg:to-75%" />
 
-        <div class="rise mt-10 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end" style="animation-delay: 300ms">
-          <p class="max-w-xl text-lg leading-relaxed text-slate">
-            From administrative operations and data analytics to professional video editing, we help businesses work smarter, stay organized, and grow.
-          </p>
-          <div class="flex flex-wrap gap-3">
-            <NuxtLink to="/contact" class="btn-primary">Let's Work Together</NuxtLink>
-            <!-- Points to Our Services while the Portfolio page is hidden (see backups/portfolio-page) -->
-            <a href="#services" class="btn-secondary">Explore Our Work</a>
+          <div class="flex flex-col gap-8 px-6 pb-10 pt-6 sm:px-12 sm:pb-14 sm:pt-10 lg:min-h-[40rem] lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:p-16">
+            <!-- Service cards: a row along the top on phones and tablets -->
+            <div class="rise grid max-w-sm grid-cols-3 gap-2 lg:hidden" aria-hidden="true">
+              <span v-for="line in heroLines" :key="line.visual" class="rounded-lg shadow-md shadow-navy/10">
+                <HeroVisual :kind="line.visual" compact />
+              </span>
+            </div>
+
+            <div>
+              <p class="eyebrow rise">Business support, done right</p>
+              <h1 class="mt-5 text-[2.25rem] leading-[1.08] sm:text-6xl md:text-7xl lg:text-[4.25rem] xl:text-[5rem]">
+                <span
+                  v-for="(line, i) in heroLines"
+                  :key="line.text"
+                  class="rise block"
+                  :class="line.color"
+                  :style="{ animationDelay: `${i * 90}ms` }"
+                >{{ line.text }}</span>
+              </h1>
+              <p class="rise mt-6 max-w-xl text-lg leading-relaxed text-slate" style="animation-delay: 300ms">
+                From administrative operations and data analytics to professional video editing, we help businesses work smarter, stay organized, and grow.
+              </p>
+              <div class="rise mt-8 flex flex-wrap gap-3" style="animation-delay: 300ms">
+                <NuxtLink to="/contact" class="btn-primary">Let's Work Together</NuxtLink>
+                <!-- Points to Our Services while the Portfolio page is hidden (see backups/portfolio-page) -->
+                <a href="#services" class="btn-secondary">Explore Our Work</a>
+              </div>
+            </div>
+
+            <!-- Service cards: a staggered stack on the right on desktop -->
+            <div class="rise hidden shrink-0 flex-col gap-4 lg:flex" style="animation-delay: 200ms" aria-hidden="true">
+              <span
+                v-for="(line, i) in heroLines"
+                :key="line.visual"
+                class="w-fit rounded-xl shadow-lg shadow-navy/10"
+                :class="{ '-ml-10': i === 1 }"
+              >
+                <HeroVisual :kind="line.visual" />
+              </span>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- WORKSPACE PHOTO: right under the hero so it shows on the first screen.
-         To change it, replace /public/images/workspace-1200.webp and workspace-2400.webp. -->
-    <section class="pb-20 sm:pb-28">
-      <div class="container-page">
-        <img
-          src="/images/workspace-1200.webp"
-          srcset="/images/workspace-1200.webp 1200w, /images/workspace-2400.webp 2400w"
-          sizes="(min-width: 1152px) 1088px, 100vw"
-          alt="A tidy desk with a laptop, an open notebook, and a cup of coffee"
-          width="2400"
-          height="1600"
-          decoding="async"
-          v-reveal
-          class="reveal aspect-[4/3] w-full rounded-3xl object-cover saturate-[0.9] sm:aspect-[21/9]"
-        >
       </div>
     </section>
 

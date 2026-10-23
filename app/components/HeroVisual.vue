@@ -13,13 +13,11 @@ const bars = [30, 42, 36, 55, 50, 68, 84]
 </script>
 
 <template>
-  <!-- PHONE / TABLET: compact version.
-       On phones it stretches into the space left after the longest headline line
-       (headline width minus 16rem, measured with the h1 as a size container), up to 112px,
-       so all three stay the same width. -->
+  <!-- PHONE / TABLET: compact version. It fills the width of whatever holds it
+       (the hero puts the three side by side in equal columns). -->
   <span
     v-if="compact"
-    class="flex h-10 w-[min(7rem,calc(100cqi-16rem))] items-center rounded-lg border border-line bg-mist px-2 sm:h-12 sm:w-32 sm:px-3"
+    class="flex h-10 w-full items-center rounded-lg border border-line bg-mist px-2 sm:h-12 sm:px-3"
     aria-hidden="true"
   >
     <!-- Checklist: same 4 tasks as desktop, three done and one open -->
