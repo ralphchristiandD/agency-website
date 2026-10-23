@@ -96,8 +96,9 @@ const steps = [
           </p>
           <ul class="grid gap-4 sm:grid-cols-2 lg:col-start-2">
             <li v-for="h in highlights" :key="h" class="flex items-start gap-3 font-medium text-navy">
-              <span class="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-navy text-white">
-                <svg class="size-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5 4.5-5" /></svg>
+              <!-- Small, thin check: outlined circle (developer wanted it lighter than the solid one) -->
+              <span class="mt-1 grid size-4 shrink-0 place-items-center rounded-full border border-navy/40 text-navy">
+                <svg class="size-2.5" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5 4.5-5" /></svg>
               </span>
               {{ h }}
             </li>
