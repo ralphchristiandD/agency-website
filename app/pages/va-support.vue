@@ -49,7 +49,7 @@ const steps = [
         class="absolute inset-0 -z-10 size-full object-cover grayscale"
       >
       <!-- White fade so the text stays easy to read: from the bottom on phones, from the left on desktop -->
-      <div class="absolute inset-0 -z-10 bg-linear-to-t from-white/95 via-white/85 via-60% to-white/40 lg:bg-linear-to-r lg:from-white/95 lg:via-white/80 lg:via-50% lg:to-white/10 lg:to-80%" />
+      <div class="absolute inset-0 -z-10 bg-linear-to-t from-white/90 via-white/70 via-55% to-white/15 lg:bg-linear-to-r lg:from-white/80 lg:via-white/50 lg:via-40% lg:to-white/0 lg:to-70%" />
 
       <div class="container-page pb-16 pt-28 sm:pb-24 sm:pt-40 lg:flex lg:min-h-[44rem] lg:flex-col lg:justify-center lg:py-24">
         <p class="eyebrow rise">Business support, done right</p>
@@ -62,7 +62,8 @@ const steps = [
             :style="{ animationDelay: `${i * 90}ms` }"
           >{{ line.text }}</span>
         </h1>
-        <p class="rise mt-6 max-w-xl text-lg leading-relaxed text-slate" style="animation-delay: 300ms">
+        <!-- Charcoal instead of the usual slate: slate is too faint on the grey photo -->
+        <p class="rise mt-6 max-w-xl text-lg leading-relaxed text-charcoal" style="animation-delay: 300ms">
           From administrative operations and data analytics to professional video editing, we help businesses work smarter, stay organized, and grow.
         </p>
         <div class="rise mt-8 flex flex-wrap gap-3" style="animation-delay: 300ms">
@@ -81,7 +82,7 @@ const steps = [
         <p v-reveal class="eyebrow reveal">Who we are</p>
         <div v-reveal class="reveal mt-4 grid gap-y-8 lg:grid-cols-2 lg:gap-x-20 lg:gap-y-0" style="transition-delay: 100ms">
           <h2 class="text-4xl leading-[1.1] sm:text-5xl">Your Business Support Team, Without the Overhead.</h2>
-          <p class="text-lg leading-relaxed text-slate sm:text-justify lg:-mt-[6px]">
+          <p class="text-base leading-relaxed text-slate sm:text-justify lg:-mt-[3px]">
             We're a U.S.-led team providing dependable administrative, analytical, and creative support to growing businesses. Our mission is simple: take work off your plate, help you make better decisions, and deliver quality work you can count on.
           </p>
           <ul class="grid gap-4 sm:grid-cols-2 lg:col-start-2">
