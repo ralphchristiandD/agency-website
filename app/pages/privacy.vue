@@ -56,9 +56,7 @@ function closeMobileMenu() {
 
 <!--
   DRAFT written from how this website actually works today (contact form via Web3Forms, Cloudflare
-  hosting, Google Fonts; no analytics, no cookies, no ads). BEFORE adding ads, pixels or analytics, add a
-  "Cookies & advertising" section (which companies, what they collect, how to opt out) and remove the
-  "we don't use it for advertising" line. Before launch the client must confirm it matches their real
+  hosting, Google Fonts). No cookies section (developer's choice, 2026-10). Before launch the client must confirm it matches their real
   practices (who on the team can see inquiries, how long they keep them) and ideally have it reviewed
   by a lawyer. It is not legal advice.
   If anything changes, update the "Last updated" date.
@@ -161,8 +159,7 @@ function closeMobileMenu() {
             <li>To meet our legal, tax, and accounting obligations if we work together.</li>
           </ul>
           <p>
-            We don't sell your personal information, and we don't use it for advertising. We won't add you to a mailing
-            list without your permission.
+            We don't sell your personal information. We won't add you to a mailing list without your permission.
           </p>
         </section>
 

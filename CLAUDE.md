@@ -153,9 +153,6 @@ docs/client-brief.md   The original client brief
       in Netlify's environment variables
 - [ ] Client reviews and approves the drafted privacy policy (`app/pages/privacy.vue`): confirm team access,
       how long inquiries are kept, and the Google Analytics retention setting; ideally a lawyer checks it
-- [ ] **Before adding ads, ad pixels (Google Ads, Meta Pixel) or analytics:** update the privacy policy first:
-      add a "Cookies & advertising" section (which companies, what they collect, how to opt out) and remove the
-      "we don't use it for advertising" line. Right now the site has no analytics, cookies or ads (policy says so).
 - [ ] Add a social share image (`public/og-image.png`, 1200x630) and wire it into `useSeoMeta`
 - [ ] Test the contact form end to end (submission arrives in the client's inbox). Until a form key is set,
       the form runs in "preview mode": it shows the thank-you screen with a note but sends nothing
