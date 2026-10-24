@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   // or in your hosting dashboard. NUXT_PUBLIC_* variables are safe to show in the browser.
   runtimeConfig: {
     public: {
-      siteUrl: 'https://www.example.com', // TODO: client's real domain
+      siteUrl: 'https://enrichtog.net', // the client's domain (bought on Cloudflare, 2026-10)
       siteName: 'Enrich',
       // Web3Forms access key: inquiries go to enrich.tog@gmail.com (new key, 2026-10; the old one sent to enrich.admin).
       // Safe to keep in code: it can only send messages to that inbox, not read them.
