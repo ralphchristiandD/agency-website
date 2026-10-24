@@ -12,7 +12,6 @@ const sections = [
   { id: 'what-we-collect', label: 'What we collect' },
   { id: 'why-we-use-it', label: 'Why we use it' },
   { id: 'who-we-share-it-with', label: 'Who we share it with' },
-  { id: 'cookies', label: 'Cookies & analytics' },
   { id: 'how-long-we-keep-it', label: 'How long we keep it' },
   { id: 'how-we-protect-it', label: 'How we protect it' },
   { id: 'your-rights', label: 'Your rights' },
@@ -56,10 +55,12 @@ function closeMobileMenu() {
 </script>
 
 <!--
-  DRAFT written from how this website actually works (contact form via Web3Forms, Google Analytics,
-  Netlify hosting, Google Fonts, click-to-play YouTube embeds). Before launch the client must confirm
-  it matches their real practices (who on the team can see inquiries, how long they keep them, the
-  Google Analytics retention setting) and ideally have it reviewed by a lawyer. It is not legal advice.
+  DRAFT written from how this website actually works today (contact form via Web3Forms, Cloudflare
+  hosting, Google Fonts; no analytics, no cookies, no ads). BEFORE adding ads, pixels or analytics, add a
+  "Cookies & advertising" section (which companies, what they collect, how to opt out) and remove the
+  "we don't use it for advertising" line. Before launch the client must confirm it matches their real
+  practices (who on the team can see inquiries, how long they keep them) and ideally have it reviewed
+  by a lawyer. It is not legal advice.
   If anything changes, update the "Last updated" date.
 -->
 <template>
@@ -140,12 +141,7 @@ function closeMobileMenu() {
               <strong>When you email us directly:</strong> your email address and anything you include in your message.
             </li>
             <li>
-              <strong>How you use the site:</strong> if analytics is turned on, Google Analytics records things like the
-              pages you visit, how you arrived, your device and browser type, and your approximate location (city or
-              country). See <a href="#cookies">Cookies &amp; analytics</a>.
-            </li>
-            <li>
-              <strong>Technical data:</strong> our hosting provider keeps standard server logs, including your internet
+              <strong>Technical data:</strong> our hosting provider (Cloudflare) keeps standard server logs, including your internet
               (IP) address, to keep the site running and secure.
             </li>
           </ul>
@@ -161,7 +157,6 @@ function closeMobileMenu() {
           <ul>
             <li>To reply to your inquiry and talk with you about your project.</li>
             <li>To prepare a support plan and deliver the services you ask for.</li>
-            <li>To understand how visitors use the site so we can improve it.</li>
             <li>To keep the website secure and filter out spam.</li>
             <li>To meet our legal, tax, and accounting obligations if we work together.</li>
           </ul>
@@ -180,8 +175,8 @@ function closeMobileMenu() {
             </li>
             <li>
               <strong>Service providers</strong> who run parts of this website for us: Web3Forms (delivers contact form
-              messages to our inbox), Google (our email, Google Analytics, and the fonts this site loads), and Netlify
-              (website hosting).
+              messages to our inbox), Google (our email and the fonts this site loads), and Cloudflare (website hosting
+              and security).
             </li>
             <li><strong>Government authorities,</strong> only when the law requires it.</li>
           </ul>
@@ -191,25 +186,12 @@ function closeMobileMenu() {
           </p>
         </section>
 
-        <section id="cookies" class="space-y-4">
-          <h2>Cookies &amp; analytics</h2>
-          <ul>
-            <li>
-              <strong>Google Analytics</strong> uses cookies to count visits and see which pages are useful. It tells us
-              about overall trends, not who you are. You can block these cookies in your browser settings or install
-              <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google's opt-out browser add-on</a>.
-            </li>
-          </ul>
-          <p>We don't use advertising or social media tracking cookies.</p>
-        </section>
-
         <section id="how-long-we-keep-it" class="space-y-4">
           <h2>How long we keep it</h2>
           <p>
             We keep inquiries for as long as we need them to respond to you. If we work together, we keep project
             communication for the length of our working relationship and for as long as tax and accounting rules
-            require. Inquiries that don't lead to a project are deleted once we no longer need them. Google Analytics
-            data is kept according to our Google Analytics retention settings.
+            require. Inquiries that don't lead to a project are deleted once we no longer need them.
           </p>
         </section>
 
@@ -230,7 +212,6 @@ function closeMobileMenu() {
             <li>know what personal information we hold about you, and get a copy of it;</li>
             <li>have wrong or incomplete information corrected;</li>
             <li>have your information deleted when we no longer need it;</li>
-            <li>opt out of analytics cookies;</li>
             <li>use these rights without being treated differently.</li>
           </ul>
           <p>
@@ -238,6 +219,10 @@ function closeMobileMenu() {
             request, email us at <a :href="`mailto:${site.email}`">{{ site.email }}</a>. To protect you, we'll confirm
             the request comes from you, for example by replying to the email address you used to contact us, before we
             share or delete anything.
+          </p>
+          <p>
+            <strong>Do Not Track:</strong> some browsers can send a "Do Not Track" signal. This website doesn't track you
+            across other websites, and it doesn't currently change how it works when it receives that signal.
           </p>
           <p>
             This website is meant for businesses and isn't directed at children under 13. We don't knowingly collect
